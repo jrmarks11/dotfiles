@@ -1,2 +1,8 @@
 TODO: add some stuff here
-for now just dont want to forget you need to symlink to autoload from the pathogen plugin
+After you install this you need to do the following
+
+```
+cd ~/dotfiles/vim/.vim
+ln -s ./vim-pathogen/autoload/
+ln -s ./molokai/colors/
+```
