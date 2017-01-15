@@ -13,16 +13,15 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 if [ -z "$SSH_AUTH_SOCK" ] ; then
-    eval `ssh-agent -s`
-    ssh-add
+  eval `ssh-agent -s`
+  ssh-add
 fi
 
-# ruby scripts
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-
-# set ruby version to 2.0.0
-chruby 2.0
+if [ -f $(brew --prefix)/etc/chruby ]; then
+  . /usr/local/share/chruby/chruby.sh
+  . /usr/local/share/chruby/auto.sh
+  chruby 2.0
+fi
 
 # git status in prompt
 source ~/.git-prompt.sh
