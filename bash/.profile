@@ -17,6 +17,7 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
+# If chruby is installed set it up and set the ruby version to 2.0
 if [ -f $(brew --prefix)/etc/chruby ]; then
   . /usr/local/share/chruby/chruby.sh
   . /usr/local/share/chruby/auto.sh
