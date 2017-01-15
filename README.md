@@ -1,8 +1,13 @@
-TODO: add some stuff here
-After you install this you need to do the following
+after you pull this you need to pull the submodules
+```
+git submodule update --init --recursive
+```
+delete any conflicting files (.vimrc ./.vim etc)
 
+run the following
 ```
-cd ~/dotfiles/vim/.vim
-ln -s ./vim-pathogen/autoload/
-ln -s ./molokai/colors/
+cd ~/dotfiles
+stow bash
+stow vim
 ```
+
