@@ -23,6 +23,9 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
+. /usr/local/opt/chruby/share/chruby/chruby.sh
+chruby 2.2.2
+
 #use git hub
 eval "$(hub alias -s)"
 
