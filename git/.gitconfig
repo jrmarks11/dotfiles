@@ -1,0 +1,14 @@
+# This is Git's per-user configuration file.
+[user]
+	name = John Marks
+	email = jmarks@covermymeds.com
+	username = jrmarks11
+[core]
+	excludesfile = /Users/jmarks/.gitignore_global
+[push]
+	default = current
+[hub]
+	host = git.innova-partners.com
+[alias]
+  hw = "!echo \"hello world\""
+  newb = "!f() { tNum=$1; bName=$2; git checkout -b \"${tNum}-${bName}\"; }; f"

@@ -1,0 +1,19 @@
+# System
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# SASS transpiler
+.sass-cache/
+.codekit-config.json
+*.sqlite3
+*.sqlite3-journal
+
+# Vim
+*.swo
+*.swp
+
+# Byebug gem
+.byebug_history
