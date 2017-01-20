@@ -12,6 +12,9 @@ stty -ixon
 if [ -d "$HOME/bin" ] ; then
   PATH="$PATH:$HOME/bin"
 fi
+# chruby
+. /usr/local/share/chruby/chruby.sh
+chruby 2.2.2
 
 # If bash completion is installed source it
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -33,7 +36,7 @@ source ~/.git-prompt.sh
 PS1_COLOR_RESET="\[\e[0m\]"
 PS1_DIRECTORY="\[\e[00;37m\] \w> "
 PS1_GIT_BRANCH="\[\e[0;35m\]\$(__git_ps1)"
-#PS1_RUBY_VERSION="\[\e[0;34m\]{\$(ruby --version | sed 's/ (.*//')}"
+#S1_RUBY_VERSION="\[\e[0;34m\]{\$(ruby --version | sed 's/ (.*//')}"
 
 PS1_COMBINED=""
 #PS1_COMBINED+=$PS1_RUBY_VERSION
