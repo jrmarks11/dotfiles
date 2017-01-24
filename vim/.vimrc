@@ -36,7 +36,7 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
       \ --ignore .DS_Store
       \ --ignore "**/*.pyc"
       \ -g ""'
-let g:ctrlp_map = '<C-p>'
+let g:ctrlp_map = '<leader>t'
 
 colors molokai
 autocmd BufWritePre * :%s/\s\+$//e

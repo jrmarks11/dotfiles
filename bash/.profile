@@ -1,4 +1,30 @@
+# which environment am i on?
+if [[ $(hostname -s) =~ ^CMM ]]; then
+  MY_HOST='CMM'
+elif [[ $(hostname -s) =~ ^vagrant ]]; then
+  MY_HOST='VAGRANT'
+else
+  MY_HOST='HOME'
+fi
+
+# source installed files
+# autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
+# chruby
+command -v chruby >/dev/null 2>&1 && { . /usr/local/share/chruby/chruby.sh; }
+[ "$MY_HOST" == "CMM" ] && { chruby 2.2.2; }
+
+# git hub
+command -v hub >/dev/null 2>&1 && { eval "$(hub alias -s)"; }
+
+# git status
+[ -f ~/.git-prompt.sh ] && . ~/.git-prompt.sh
 
 alias ls='ls -G'
 
@@ -12,25 +38,12 @@ stty -ixon
 if [ -d "$HOME/bin" ] ; then
   PATH="$PATH:$HOME/bin"
 fi
-# chruby
-. /usr/local/share/chruby/chruby.sh
-chruby 2.2.2
 
-# If bash completion is installed source it
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
-
+# setup ssh
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s`
   ssh-add
 fi
-
-#use git hub
-eval "$(hub alias -s)"
-
-# git status in prompt
-source ~/.git-prompt.sh
 
 # prompt
 PS1_COLOR_RESET="\[\e[0m\]"
