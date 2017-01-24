@@ -1,10 +1,10 @@
 # which environment am i on?
 if [[ $(hostname -s) =~ ^CMM ]]; then
-  MY_HOST='CMM'
+  MY_HOST="\[\e[0;32m\]CMM";
 elif [[ $(hostname -s) =~ ^vagrant ]]; then
-  MY_HOST='VAGRANT'
+  MY_HOST="\[\e[0;31m\]VGR";
 else
-  MY_HOST='HOME'
+  MY_HOST="\[\e[0;32m\]JRM";
 fi
 
 # source installed files
@@ -18,7 +18,7 @@ fi
 
 # chruby
 command -v chruby >/dev/null 2>&1 && { . /usr/local/share/chruby/chruby.sh; }
-[ "$MY_HOST" == "CMM" ] && { chruby 2.2.2; }
+[[ "$MY_HOST" =~ 'CMM\'$ ]] && { chruby 2.2.2; }
 
 # git hub
 command -v hub >/dev/null 2>&1 && { eval "$(hub alias -s)"; }
@@ -49,10 +49,9 @@ fi
 PS1_COLOR_RESET="\[\e[0m\]"
 PS1_DIRECTORY="\[\e[00;37m\] \w> "
 PS1_GIT_BRANCH="\[\e[0;35m\]\$(__git_ps1)"
-#S1_RUBY_VERSION="\[\e[0;34m\]{\$(ruby --version | sed 's/ (.*//')}"
 
 PS1_COMBINED=""
-#PS1_COMBINED+=$PS1_RUBY_VERSION
+PS1_COMBINED+=$MY_HOST
 PS1_COMBINED+=$PS1_GIT_BRANCH
 PS1_COMBINED+=$PS1_DIRECTORY
 PS1_COMBINED+=$PS1_COLOR_RESET
