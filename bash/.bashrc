@@ -19,8 +19,8 @@ if [command -v brew >/dev/null 2>&1 ]; then
 fi
 
 # chruby
-command -v chruby >/dev/null 2>&1 && { . /usr/local/share/chruby/chruby.sh; }
-[[ "$MY_HOST" =~ 'CMM\'$ ]] && { chruby 2.2.2; }
+[ -f /usr/local/opt/chruby/share/chruby/chruby.sh ] && . /usr/local/opt/chruby/share/chruby/chruby.sh
+command -v chruby >/dev/null 2>&1 && [[ "$MY_HOST" =~ 'CMM'$ ]] && { chruby 2.2.2; }
 
 # git hub
 command -v hub >/dev/null 2>&1 && { eval "$(hub alias -s)"; }
