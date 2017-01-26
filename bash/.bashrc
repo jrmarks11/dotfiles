@@ -1,8 +1,10 @@
 # which environment am i on?
 if [[ $(hostname -s) =~ ^CMM ]]; then
   MY_HOST="\[\e[0;32m\]CMM";
+  MY_HOST="🤖";
 elif [[ $(hostname -s) =~ ^vagrant ]]; then
   MY_HOST="\[\e[0;31m\]VGR";
+  MY_HOST="💩";
 else
   MY_HOST="👽";
 fi
@@ -20,7 +22,7 @@ fi
 
 # chruby
 [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ] && . /usr/local/opt/chruby/share/chruby/chruby.sh
-command -v chruby >/dev/null 2>&1 && [[ "$MY_HOST" =~ 'CMM'$ ]] && { chruby 2.2.2; }
+command -v chruby >/dev/null 2>&1 && [[ "$MY_HOST" =~ '🤖'$ ]] && { chruby 2.2.2; }
 
 # git hub
 command -v hub >/dev/null 2>&1 && { eval "$(hub alias -s)"; }
