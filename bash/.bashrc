@@ -63,3 +63,6 @@ export PS1=$PS1_COMBINED
 #set default bash editor to vim
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+#functions
+cl() { history -p '!!'|tr -d \\n|pbcopy; }
