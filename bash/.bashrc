@@ -4,7 +4,7 @@ if [[ $(hostname -s) =~ ^CMM ]]; then
 elif [[ $(hostname -s) =~ ^vagrant ]]; then
   MY_HOST="\[\e[0;31m\]VGR";
 else
-  MY_HOST="\[\e[0;32m\]JRM";
+  MY_HOST="👽";
 fi
 
 # source installed files
