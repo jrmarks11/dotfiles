@@ -14,13 +14,11 @@ fi
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # bash_completion
-if [command -v brew >/dev/null 2>&1 ]; then
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-  fi
-fi
+command -v brew >/dev/null 2>&1 &&
+  [[ -f $(brew --prefix)/etc/bash_completion ]] &&
+  { . $(brew --prefix)/etc/bash_completion; }
 
-# chruby
+# ehruby
 [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ] && . /usr/local/opt/chruby/share/chruby/chruby.sh
 command -v chruby >/dev/null 2>&1 && [[ "$MY_HOST" =~ '🤖'$ ]] && { chruby 2.2.2; }
 
