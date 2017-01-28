@@ -66,3 +66,5 @@ export EDITOR="$VISUAL"
 
 #functions
 cl() { history -p '!!'|tr -d \\n|pbcopy; }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
