@@ -21,13 +21,18 @@ set visualbell
 set noerrorbells
 
 execute pathogen#infect()
+
+call plug#begin('~/.vim/plugged')
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+call plug#end()
+
 syntax on
 filetype on
 filetype indent on
 filetype plugin on
 
 map <Leader>l :Autoformat<CR>
-let g:ctrlp_map = '<leader>t'
+map <Leader>t :FZF<CR>
 
 colors molokai
 autocmd BufWritePre * :%s/\s\+$//e

@@ -19,3 +19,6 @@
 [submodule "vim/.vim/molokai"]
 	path = vim/.vim/molokai
 	url = git@github.com:tomasr/molokai.git
+[submodule "vim/.vim/vim-plug"]
+	path = vim/.vim/vim-plug
+	url = git@github.com:junegunn/vim-plug.git
