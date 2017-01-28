@@ -8,7 +8,6 @@ set number
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 set wildignore+=*.class,*/resolution-cache/*,*/$global/*,*/target/scala*
-set ruler
 set showtabline=2
 set shell=bash
 set colorcolumn=80
