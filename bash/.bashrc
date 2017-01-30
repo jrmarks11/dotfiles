@@ -22,6 +22,10 @@ command -v brew >/dev/null 2>&1 &&
 [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ] && . /usr/local/opt/chruby/share/chruby/chruby.sh
 command -v chruby >/dev/null 2>&1 && [[ "$MY_HOST" =~ '🤖'$ ]] && { chruby 2.2.2; }
 
+# fzf
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
 # git hub
 command -v hub >/dev/null 2>&1 && { eval "$(hub alias -s)"; }
 
@@ -67,4 +71,3 @@ export EDITOR="$VISUAL"
 #functions
 cl() { history -p '!!'|tr -d \\n|pbcopy; }
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
