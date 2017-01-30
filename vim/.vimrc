@@ -31,9 +31,6 @@ filetype on
 filetype indent on
 filetype plugin on
 
-map <Leader>l :Autoformat<CR>
-map <Leader>t :FZF<CR>
-
 colors molokai
 autocmd BufWritePre * :%s/\s\+$//e
 highlight LineNr guifg=#cccccc
@@ -43,6 +40,8 @@ nnoremap j gj
 nnoremap k gk
 inoremap kj <ESC>
 inoremap jk <ESC>
+map <Leader>l :Autoformat<CR>
+nnoremap t :FZF<CR>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
