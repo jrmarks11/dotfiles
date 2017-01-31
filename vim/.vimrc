@@ -40,6 +40,7 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <TAB> :bn<CR>
 nnoremap <S-TAB> :bp<CR>
+nnoremap - :bd<CR>
 inoremap kj <ESC>
 inoremap jk <ESC>
 map <Leader>l :Autoformat<CR>
