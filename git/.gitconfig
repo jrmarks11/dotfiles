@@ -10,6 +10,7 @@
 [hub]
 	host = git.innova-partners.com
 [alias]
+  bclean = "!git checkout master && git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
   newb = "!f() { tNum=$1; bName=$2; git checkout -b \"${tNum}-${bName}\"; }; f"
   s = status -s
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
