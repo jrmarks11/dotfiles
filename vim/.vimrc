@@ -19,7 +19,6 @@ set ignorecase
 set smartcase
 set visualbell
 set noerrorbells
-set relativenumber
 
 execute pathogen#infect()
 
@@ -65,3 +64,5 @@ map <Leader>k <Plug>(easymotion-k)
 nnoremap <leader>ev :e $MYVIMRC<CR>
 nnoremap <leader>eb :e ~/.bashrc<CR>
 nnoremap <leader>eg :e ~/.gitconfig<CR>
+
+nmap \ <Plug>CommentaryLine
