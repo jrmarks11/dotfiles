@@ -22,3 +22,6 @@
 [submodule "vim/.vim/bundle/vim-easymotion"]
 	path = vim/.vim/bundle/vim-easymotion
 	url = git@github.com:easymotion/vim-easymotion.git
+[submodule "vim/.vim/bundle/vim-commentary"]
+	path = vim/.vim/bundle/vim-commentary
+	url = git@github.com:tpope/vim-commentary.git
