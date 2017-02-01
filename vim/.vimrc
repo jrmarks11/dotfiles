@@ -1,4 +1,4 @@
-let mapleader=","
+let mapleader=" "
 set nocompatible
 set expandtab
 set tabstop=2
@@ -19,6 +19,7 @@ set ignorecase
 set smartcase
 set visualbell
 set noerrorbells
+set relativenumber
 
 execute pathogen#infect()
 
@@ -43,10 +44,24 @@ nnoremap <S-TAB> :bp<CR>
 nnoremap - :bd<CR>
 inoremap kj <ESC>
 inoremap jk <ESC>
+nnoremap B ^
+nnoremap E $
 map <Leader>l :Autoformat<CR>
 nnoremap t :FZF<CR>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-nmap <silent> ,/ :nohlsearch<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>
+
+" Easymotion.
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+nmap s <Plug>(easymotion-overwin-f2)
+let g:EasyMotion_smartcase = 1
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+" fast edit config files
+nnoremap <leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>eb :e ~/.bashrc<CR>
+nnoremap <leader>eg :e ~/.gitconfig<CR>
