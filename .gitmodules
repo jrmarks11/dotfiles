@@ -1,15 +1,9 @@
-[submodule "vim/.vim/bundle/delimitMate"]
-	path = vim/.vim/bundle/delimitMate
-	url = git@github.com:Raimondi/delimitMate.git
 [submodule "vim/.vim/bundle/nerdcommenter"]
 	path = vim/.vim/bundle/nerdcommenter
 	url = git@github.com:scrooloose/nerdcommenter.git
 [submodule "vim/.vim/bundle/vim-autoformat"]
 	path = vim/.vim/bundle/vim-autoformat
 	url = git@github.com:Chiel92/vim-autoformat.git
-[submodule "vim/.vim/bundle/vim-rails"]
-	path = vim/.vim/bundle/vim-rails
-	url = git@github.com:tpope/vim-rails.git
 [submodule "vim/.vim/bundle/vim-sensible"]
 	path = vim/.vim/bundle/vim-sensible
 	url = git@github.com:tpope/vim-sensible.git
