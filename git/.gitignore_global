@@ -14,6 +14,7 @@ Thumbs.db
 # Vim
 *.swo
 *.swp
+*.netrwhist
 
 # Byebug gem
 .byebug_history
