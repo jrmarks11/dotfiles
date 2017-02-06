@@ -1,22 +1,22 @@
 # which environment am i on?
 if [[ $(hostname -s) =~ ^CMM ]]; then
-  MY_HOST="\[\e[0;32m\]CMM";
   MY_HOST="🤖";
 elif [[ $(hostname -s) =~ ^vagrant ]]; then
-  MY_HOST="\[\e[0;31m\]VGR";
   MY_HOST="💩";
 else
   MY_HOST="👽";
 fi
 
 # source installed files
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # bash_completion
 command -v brew >/dev/null 2>&1 &&
   [[ -f $(brew --prefix)/etc/bash_completion ]] &&
   { . $(brew --prefix)/etc/bash_completion; }
 
-# ehruby
+# chruby
 [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ] && . /usr/local/opt/chruby/share/chruby/chruby.sh
 command -v chruby >/dev/null 2>&1 && [[ "$MY_HOST" =~ '🤖'$ ]] && { chruby 2.2.2; }
 
