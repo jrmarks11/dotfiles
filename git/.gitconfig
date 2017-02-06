@@ -10,6 +10,11 @@
 [hub]
 	host = git.innova-partners.com
 [alias]
+  br = branch
+  cam = commit -am
+  ci = commit
+  cm = commit -m
   co = checkout
+  hs=log --pretty='format:%C(yellow)%h %Creset- %C(white)%s %C(bold blue)[%an]%Creset %Cgreen%cr' --graph
   s = status -s
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive
