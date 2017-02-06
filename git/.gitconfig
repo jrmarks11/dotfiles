@@ -10,5 +10,6 @@
 [hub]
 	host = git.innova-partners.com
 [alias]
+  co = checkout
   s = status -s
   up = !git pull --rebase --prune $@ && git submodule update --init --recursive

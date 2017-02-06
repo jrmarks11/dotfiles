@@ -12,5 +12,6 @@ for branch in $(git for-each-ref --format='%(refname)' refs/heads/); do
   merged="$(git log --grep=$name | grep 'Merge pull request')"
   if [[ -n $merged ]]; then
     echo "$name deleted"
+    git branch -d $name
   fi
 done
