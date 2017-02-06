@@ -10,8 +10,6 @@ else
 fi
 
 # source installed files
-# autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # bash_completion
 command -v brew >/dev/null 2>&1 &&
@@ -21,6 +19,15 @@ command -v brew >/dev/null 2>&1 &&
 # ehruby
 [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ] && . /usr/local/opt/chruby/share/chruby/chruby.sh
 command -v chruby >/dev/null 2>&1 && [[ "$MY_HOST" =~ '🤖'$ ]] && { chruby 2.2.2; }
+
+# fasd
+fasd_cache="$HOME/.fasd-init-bash"
+if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+  fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
+fi
+source "$fasd_cache"
+unset fasd_cache
+alias jj='fasd_cd -d -i'
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -71,3 +78,13 @@ export EDITOR="$VISUAL"
 #functions
 cl() { history -p '!!'|tr -d \\n|pbcopy; }
 
+# fasd + fzf for directory + vim
+j() {
+  local dir
+  dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+}
+
+v() {
+  local file
+  file="$(fasd -Rfl "$1" | fzf -1 -0 --no-sort +m)" && vim "${file}" || return 1
+}
