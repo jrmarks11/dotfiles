@@ -36,6 +36,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 highlight LineNr guifg=#cccccc
 
 nnoremap ; :
+nnoremap ! :!
 nnoremap j gj
 nnoremap k gk
 nnoremap <TAB> :bn<CR>
