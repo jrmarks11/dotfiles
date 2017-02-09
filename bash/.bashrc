@@ -21,15 +21,17 @@ command -v brew >/dev/null 2>&1 &&
 command -v chruby >/dev/null 2>&1 && [[ "$MY_HOST" =~ '🤖'$ ]] && { chruby 2.2.2; }
 
 # fasd
-fasd_cache="$HOME/.fasd-init-bash"
-if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
-  fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
+if [[ $(command -v fasd) ]]; then
+  fasd_cache="$HOME/.fasd-init-bash"
+  if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+    fasd --init posix-alias bash-hook bash-ccomp bash-ccomp-install >| "$fasd_cache"
 
-  alias j='fasd_cd -d'
-  alias jj='fasd_cd -d -i'
+    alias j='fasd_cd -d'
+    alias jj='fasd_cd -d -i'
+  fi
+  source "$fasd_cache"
+  unset fasd_cache
 fi
-source "$fasd_cache"
-unset fasd_cache
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
