@@ -40,7 +40,9 @@ nnoremap ! :!
 nnoremap j gj
 nnoremap k gk
 nnoremap <TAB> :bn<CR>
+inoremap <TAB> <C-N>
 nnoremap <S-TAB> :bp<CR>
+inoremap <S-TAB> <C-P>
 nnoremap - :bd<CR>
 inoremap kj <ESC>
 inoremap jk <ESC>
@@ -67,3 +69,4 @@ nnoremap <leader>eb :e ~/.bashrc<CR>
 nnoremap <leader>eg :e ~/.gitconfig<CR>
 
 nmap \ <Plug>CommentaryLine
+nnoremap $ "*
