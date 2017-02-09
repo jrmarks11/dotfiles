@@ -27,6 +27,7 @@ if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
 fi
 source "$fasd_cache"
 unset fasd_cache
+alias j='fasd_cd -d'
 alias jj='fasd_cd -d -i'
 
 # fzf
@@ -79,10 +80,10 @@ export EDITOR="$VISUAL"
 cl() { history -p '!!'|tr -d \\n|pbcopy; }
 
 # fasd + fzf for directory + vim
-j() {
-  local dir
-  dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
-}
+# j() {
+#   local dir
+#   dir="$(fasd -Rdl "$1" | fzf -1 -0 --no-sort +m)" && cd "${dir}" || return 1
+# }
 
 v() {
   local file
