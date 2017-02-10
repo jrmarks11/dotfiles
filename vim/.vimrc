@@ -46,8 +46,8 @@ inoremap <S-TAB> <C-P>
 nnoremap - :bd<CR>
 inoremap kj <ESC>
 inoremap jk <ESC>
-nnoremap B ^
-nnoremap E $
+nmap B ^
+nmap E $
 map <Leader>l :Autoformat<CR>
 nnoremap t :FZF<CR>
 map <C-h> <C-w>h
@@ -62,6 +62,7 @@ nmap s <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
+map <leader>w :w<CR>
 
 " fast edit config files
 nnoremap <leader>ev :e $MYVIMRC<CR>
