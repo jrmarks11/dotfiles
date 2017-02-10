@@ -70,4 +70,11 @@ nnoremap <leader>eb :e ~/.bashrc<CR>
 nnoremap <leader>eg :e ~/.gitconfig<CR>
 
 nmap \ <Plug>CommentaryLine
+vmap \ <Plug>Commentary
 nnoremap $ "*
+map q: :q
+
+noremap gV `[v`]
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
