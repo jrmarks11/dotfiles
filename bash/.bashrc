@@ -56,7 +56,7 @@ alias ls='ls -G'
 # Control the command history
 export HISTFILESIZE=10000
 export HISTSIZE=10000
-export HISTCONTROL=ignoredups:erasedups
+export HISTCONTROL=ignoreboth:erasedups
 stty -ixon
 
 # If there is a bin directory in the users home add it to path
