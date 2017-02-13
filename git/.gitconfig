@@ -4,7 +4,7 @@
 	email = jmarks@covermymeds.com
 	username = jrmarks11
 [core]
-	excludesfile = /Users/jmarks/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [push]
 	default = current
 [hub]
