@@ -46,8 +46,8 @@ inoremap <S-TAB> <C-P>
 nnoremap - :bd<CR>
 inoremap kj <ESC>
 inoremap jk <ESC>
-nmap B ^
-nmap E $
+nnoremap B ^
+nnoremap E $
 map <Leader>l :Autoformat<CR>
 nnoremap t :FZF<CR>
 map <C-h> <C-w>h
