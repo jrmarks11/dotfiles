@@ -20,10 +20,15 @@ set smartcase
 set visualbell
 set noerrorbells
 
-execute pathogen#infect()
+" execute pathogen#infect()
 
 call plug#begin('~/.vim/plugged')
 Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'Chiel92/vim-autoformat'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 syntax on
