@@ -40,15 +40,16 @@ nnoremap ! :!
 nnoremap j gj
 nnoremap k gk
 nnoremap <TAB> :bn<CR>
-inoremap <TAB> <C-N>
 nnoremap <S-TAB> :bp<CR>
+inoremap <TAB> <C-N>
 inoremap <S-TAB> <C-P>
 nnoremap - :bd<CR>
 inoremap kj <ESC>
 inoremap jk <ESC>
-nnoremap B ^
-nnoremap E $
-map <Leader>l :Autoformat<CR>
+vnoremap jk <ESC>
+vnoremap kj <ESC>
+nmap B ^
+map <leader>l :Autoformat<CR>
 nnoremap t :FZF<CR>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -60,21 +61,28 @@ nmap <silent> <leader>/ :nohlsearch<CR>
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap s <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <leader>w :w<CR>
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
 
 " fast edit config files
-nnoremap <leader>ev :e $MYVIMRC<CR>
-nnoremap <leader>eb :e ~/.bashrc<CR>
-nnoremap <leader>eg :e ~/.gitconfig<CR>
+nmap <leader>ev :e $MYVIMRC<CR>
+nmap <leader>sv :so $MYVIMRC<CR>
+nmap <leader>eb :e ~/.bashrc<CR>
+nmap <leader>eg :e ~/.gitconfig<CR>
 
+" Commentary
 nmap \ <Plug>CommentaryLine
 vmap \ <Plug>Commentary
-nnoremap $ "*
-map q: :q
 
+" cut and pasting keybindings
 noremap gV `[v`]
 vnoremap <silent> y y`]
 vnoremap <silent> p p`]
 nnoremap <silent> p p`]
+nmap Y y$
+
+nmap <leader>w :w<CR>
+nmap <leader>c "*
+vmap <leader>c "*y
+nmap <leader>p "*p
+nmap q: :q
