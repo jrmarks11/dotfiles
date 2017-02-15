@@ -12,7 +12,7 @@
 	url = git@github.com:junegunn/vim-plug.git
 [submodule "vim/.vim/plugged/fzf.vim"]
 	path = vim/.vim/plugged/fzf.vim
-  url = git@github.com:junegunn/fzf.vim.git
+	url = git@github.com:junegunn/fzf.vim.git
 [submodule "vim/.vim/bundle/vim-surround"]
 	path = vim/.vim/plugged/vim-surround
 	url = git@github.com:tpope/vim-surround.git
@@ -22,3 +22,6 @@
 [submodule "vim/.vim/bundle/vim-commentary"]
 	path = vim/.vim/plugged/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
+[submodule "vim/.vim/plugged/fzf"]
+	path = vim/.vim/plugged/fzf
+	url = git@github.com:junegunn/fzf.git
