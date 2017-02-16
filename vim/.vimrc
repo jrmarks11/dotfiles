@@ -28,7 +28,12 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'Chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
+
+" Colors
 Plug 'tomasr/molokai'
+Plug 'nanotech/jellybeans.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'junegunn/seoul256.vim'
 call plug#end()
 
 syntax on
@@ -91,3 +96,8 @@ nmap <leader>c "*
 vmap <leader>c "*y
 nmap <leader>p "*p
 nmap q: :q
+map <F1> :colors molokai<CR>:set background=dark<CR>
+map <F2> :colors jellybeans<CR>:set background=dark<CR>
+map <F3> :colors onedark<CR>:set background=dark<CR>
+map <F4> :colors seoul256<CR>:set background=dark<CR>
+map <F5> :colors seoul256<CR>:set background=light<CR>
