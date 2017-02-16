@@ -21,7 +21,6 @@ set visualbell
 set noerrorbells
 
 call plug#begin('~/.vim/plugged')
-" Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf',        { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-sensible'
@@ -29,6 +28,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'Chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
+Plug 'tomasr/molokai'
 call plug#end()
 
 syntax on
