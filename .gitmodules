@@ -34,3 +34,6 @@
 [submodule "vim/.vim/plugged/seoul256.vim"]
 	path = vim/.vim/plugged/seoul256.vim
 	url = git@me.github.com:junegunn/seoul256.vim.git
+[submodule "vim/.vim/plugged/bubblegum"]
+	path = vim/.vim/plugged/bubblegum
+	url = git@me.github.com:baskerville/bubblegum.git

@@ -26,6 +26,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
 Plug 'Chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
 
@@ -34,6 +35,7 @@ Plug 'tomasr/molokai'
 Plug 'nanotech/jellybeans.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/seoul256.vim'
+Plug 'baskerville/bubblegum'
 call plug#end()
 
 syntax on
@@ -41,7 +43,8 @@ filetype on
 filetype indent on
 filetype plugin on
 
-colors molokai
+colors bubblegum-256-dark
+set background=dark
 autocmd BufWritePre * :%s/\s\+$//e
 highlight LineNr guifg=#cccccc
 
@@ -96,8 +99,12 @@ nmap <leader>c "*
 vmap <leader>c "*y
 nmap <leader>p "*p
 nmap q: :q
-map <F1> :colors molokai<CR>:set background=dark<CR>
+
+map <F1> :colors molokai<CR>
 map <F2> :colors jellybeans<CR>:set background=dark<CR>
 map <F3> :colors onedark<CR>:set background=dark<CR>
 map <F4> :colors seoul256<CR>:set background=dark<CR>
 map <F5> :colors seoul256<CR>:set background=light<CR>
+map <F6> :colors bubblegum-256-dark<CR>:set background=dark<CR>
+map <F7> :colors bubblegum-256-light<CR>:set background=light<CR>
+set statusline=%<[%n]\ %F\ %m%r%y\ %{exists('g:loaded_fugitive')?fugitive#statusline():''}\ %=%-14.(%l,%c%V%)\ %P
