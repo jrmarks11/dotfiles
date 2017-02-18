@@ -1,4 +1,4 @@
-let mapleader=" "
+let mapleader=' '
 set nocompatible
 set expandtab
 set tabstop=2
@@ -13,8 +13,8 @@ set shiftround
 set showmatch
 set ignorecase
 set smartcase
-set visualbell
 set noerrorbells
+set visualbell
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
@@ -22,7 +22,6 @@ Plug 'junegunn/fzf',        { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
 Plug 'Chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
 
@@ -48,16 +47,18 @@ nnoremap ; :
 nnoremap ! :!
 nnoremap j gj
 nnoremap k gk
+nnoremap <ENTER> <C-d>
+nnoremap <LEADER><ENTER> <C-u>
 nmap B ^
 inoremap kj <ESC>
 inoremap jk <ESC>
-vnoremap jk <ESC>
-vnoremap kj <ESC>
-noremap gv `[v`]
-vnoremap <silent> y y`]
-vnoremap <silent> p p`]
-nnoremap <silent> p p`]
+xnoremap v <ESC>
+nnoremap gv `[v`]
+xnoremap y y`]
+xnoremap p p`]
+nnoremap p p`]
 nmap Y y$
+nmap K i<CR><ESC>
 nmap q: :q
 
 nnoremap <TAB> :bn<CR>
@@ -71,26 +72,30 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-nmap <leader>w :w<CR>
-nmap <leader>y "*y
-nmap <leader>yy "*yy
-vmap <leader>y "*y
-nmap <leader>p "*p
-nmap <leader>ev :e $MYVIMRC<CR>
-nmap <leader>sv :so $MYVIMRC<CR>
-nmap <leader>eb :e ~/.bashrc<CR>
-nmap <leader>eg :e ~/.gitconfig<CR>
+nmap <LEADER>w :w<CR>
+nmap <LEADER>y "*y
+nmap <LEADER>yy "*yy
+xmap <LEADER>y "*y
+nmap <LEADER>p "*p
+nmap <LEADER>o o<ESC>
+nmap <LEADER>O O<ESC>
+nmap <LEADER>c cc<ESC>
+nmap <LEADER>d dd<ESC>
+nmap <LEADER>ev :e $MYVIMRC<CR>
+nmap <LEADER>sv :so $MYVIMRC<CR>
+nmap <LEADER>eb :e ~/.bashrc<CR>
+nmap <LEADER>eg :e ~/.gitconfig<CR>
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap s <Plug>(easymotion-overwin-f2)
 let g:EasyMotion_smartcase = 1
-map <leader>j <Plug>(easymotion-j)
-map <leader>k <Plug>(easymotion-k)
-map <leader>l :Autoformat<CR>
-nmap <silent> <leader>/ :nohlsearch<CR>
+nmap <LEADER>j <Plug>(easymotion-j)
+nmap <LEADER>k <Plug>(easymotion-k)
+nmap <LEADER>l :Autoformat<CR>
+nmap t :FZF<CR>
+nmap <LEADER>/ :nohlsearch<CR>
 nmap \ <Plug>CommentaryLine
 vmap \ <Plug>Commentary
-noremap t :FZF<CR>
 
 map <F1> :colors molokai<CR>
 map <F2> :colors jellybeans<CR>:set background=dark<CR>
