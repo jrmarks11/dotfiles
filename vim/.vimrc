@@ -53,6 +53,8 @@ nmap B ^
 inoremap kj <ESC>
 inoremap jk <ESC>
 xnoremap v <ESC>
+cnoremap kj <ESC>
+cnoremap jk <ESC>
 nnoremap gv `[v`]
 xnoremap y y`]
 xnoremap p p`]
