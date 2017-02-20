@@ -43,7 +43,6 @@ highlight LineNr guifg=#cccccc
 
 autocmd BufWritePre * :%s/\s\+$//e
 
-nnoremap ; :
 nnoremap ! :!
 nnoremap j gj
 nnoremap k gk
