@@ -80,7 +80,6 @@ xmap <LEADER>y "*y
 nmap <LEADER>p "*p
 nmap <LEADER>o o<ESC>
 nmap <LEADER>O O<ESC>
-nmap <LEADER>c cc<ESC>
 nmap <LEADER>d dd<ESC>
 nmap <LEADER>ev :e $MYVIMRC<CR>
 nmap <LEADER>sv :so $MYVIMRC<CR>
