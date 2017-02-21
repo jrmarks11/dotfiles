@@ -86,6 +86,7 @@ nmap <LEADER>ev :e $MYVIMRC<CR>
 nmap <LEADER>sv :so $MYVIMRC<CR>
 nmap <LEADER>eb :e ~/.bashrc<CR>
 nmap <LEADER>eg :e ~/.gitconfig<CR>
+nmap <LEADER>r :!wholine % <C-r>=line('.')<CR><CR>
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap s <Plug>(easymotion-overwin-f2)
