@@ -5,7 +5,7 @@
 	path = vim/.vim/plugged/vim-sensible
 	url = git@github.com:tpope/vim-sensible.git
 [submodule "vim/.vim/molokai"]
-	path = vim/.vim/plugged/molokai/molokai
+	path = vim/.vim/plugged/molokai
 	url = git@github.com:tomasr/molokai.git
 [submodule "vim/.vim/vim-plug"]
 	path = vim/.vim/vim-plug
