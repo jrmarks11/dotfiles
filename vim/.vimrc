@@ -24,6 +24,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'Chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
+Plug 'vim-elixir'
 
 Plug 'tomasr/molokai'
 Plug 'nanotech/jellybeans.vim'

@@ -37,3 +37,6 @@
 [submodule "vim/.vim/plugged/bubblegum"]
 	path = vim/.vim/plugged/bubblegum
 	url = git@github.com:baskerville/bubblegum.git
+[submodule "vim/.vim/plugged/vim-elixir"]
+	path = vim/.vim/plugged/vim-elixir
+	url = git@github.com:elixir-lang/vim-elixir.git
