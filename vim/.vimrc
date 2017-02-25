@@ -15,6 +15,7 @@ set ignorecase
 set smartcase
 set noerrorbells
 set visualbell
+set wildignore+=*/.git/*,*/tmp/*,*.swp
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
@@ -87,6 +88,7 @@ nmap <LEADER>sv :so $MYVIMRC<CR>
 nmap <LEADER>eb :e ~/.bashrc<CR>
 nmap <LEADER>eg :e ~/.gitconfig<CR>
 nmap <LEADER>r :!wholine % <C-r>=line('.')<CR><CR>
+nmap <LEADER>t :Find<SPACE>
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap s <Plug>(easymotion-overwin-f2)
@@ -106,3 +108,5 @@ map <F4> :colors seoul256<CR>:set background=dark<CR>
 map <F5> :colors seoul256<CR>:set background=light<CR>
 map <F6> :colors bubblegum-256-dark<CR>:set background=dark<CR>
 map <F7> :colors bubblegum-256-light<CR>:set background=light<CR>
+
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
