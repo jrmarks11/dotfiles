@@ -28,3 +28,6 @@
 [submodule "vim/.vim/plugged/vim-elixir"]
 	path = vim/.vim/plugged/vim-elixir
 	url = git@github.com:elixir-lang/vim-elixir.git
+[submodule "vim/.vim/plugged/vim-easy-align"]
+	path = vim/.vim/plugged/vim-easy-align
+	url = git@github.com:junegunn/vim-easy-align.git
