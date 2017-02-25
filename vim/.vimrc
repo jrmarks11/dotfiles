@@ -26,7 +26,6 @@ Plug 'tpope/vim-surround'
 Plug 'Chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-elixir'
-
 Plug 'tomasr/molokai'
 call plug#end()
 
@@ -72,7 +71,6 @@ map <C-l> <C-w>l
 
 nmap <LEADER>w :w<CR>
 nmap <LEADER>y "*y
-nmap <LEADER>yy "*yy
 xmap <LEADER>y "*y
 nmap <LEADER>p "*p
 nmap <LEADER>o o<ESC>
