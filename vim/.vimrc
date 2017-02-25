@@ -28,10 +28,6 @@ Plug 'easymotion/vim-easymotion'
 Plug 'vim-elixir'
 
 Plug 'tomasr/molokai'
-Plug 'nanotech/jellybeans.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'junegunn/seoul256.vim'
-Plug 'baskerville/bubblegum'
 call plug#end()
 
 syntax on
@@ -39,8 +35,7 @@ filetype on
 filetype indent on
 filetype plugin on
 
-colors bubblegum-256-dark
-set background=dark
+colors molokai
 highlight LineNr guifg=#cccccc
 
 autocmd BufWritePre * :%s/\s\+$//e
@@ -100,13 +95,5 @@ nmap t :FZF<CR>
 nmap <LEADER>/ :nohlsearch<CR>
 nmap \ <Plug>CommentaryLine
 vmap \ <Plug>Commentary
-
-map <F1> :colors molokai<CR>
-map <F2> :colors jellybeans<CR>:set background=dark<CR>
-map <F3> :colors onedark<CR>:set background=dark<CR>
-map <F4> :colors seoul256<CR>:set background=dark<CR>
-map <F5> :colors seoul256<CR>:set background=light<CR>
-map <F6> :colors bubblegum-256-dark<CR>:set background=dark<CR>
-map <F7> :colors bubblegum-256-light<CR>:set background=light<CR>
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
