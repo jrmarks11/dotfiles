@@ -1,13 +1,30 @@
-after you pull this you need to pull the submodules
+pull this into home
+delete conflicting files in your home directory
 ```
-git submodule update --init --recursive
+.bash_profile
+.bashrc
+.vimrc
+.gitconfig
+.gitignore_global
 ```
-delete any conflicting files (.vimrc ./.vim etc)
 
 run the following
 ```
 cd ~/dotfiles
 stow bash
 stow vim
+stow git
+stow scripts
+```
+
+after you pull this you need to pull the submodules
+```
+git up
+```
+
+if reinstalling run stow with -R like so
+```
+stow -R vim
+...
 ```
 
