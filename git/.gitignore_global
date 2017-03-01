@@ -18,3 +18,5 @@ Thumbs.db
 
 # Byebug gem
 .byebug_history
+
+/vendor
