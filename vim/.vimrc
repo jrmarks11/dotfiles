@@ -19,7 +19,7 @@ set wildignore+=*/.git/*,*/tmp/*,*.swp
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
-Plug 'junegunn/fzf',        { 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'
@@ -40,7 +40,6 @@ highlight LineNr guifg=#cccccc
 
 autocmd BufWritePre * :%s/\s\+$//e
 
-nnoremap ! :!
 nnoremap j gj
 nnoremap k gk
 nnoremap <ENTER> <C-d>
@@ -51,7 +50,6 @@ inoremap jk <ESC>
 xnoremap v <ESC>
 cnoremap kj <C-c>
 cnoremap jk <C-c>
-nnoremap gv `[v`]
 xnoremap y y`]
 xnoremap p p`]
 nnoremap p p`]
@@ -65,11 +63,6 @@ nnoremap - :bd<CR>
 inoremap <TAB> <C-N>
 inoremap <S-TAB> <C-P>
 
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-
 nmap <LEADER>w :w<CR>
 nmap <LEADER>y "*y
 xmap <LEADER>y "*y
@@ -77,10 +70,6 @@ nmap <LEADER>p "*p
 nmap <LEADER>o o<ESC>
 nmap <LEADER>O O<ESC>
 nmap <LEADER>d dd<ESC>
-nmap <LEADER>ev :e $MYVIMRC<CR>
-nmap <LEADER>sv :so $MYVIMRC<CR>
-nmap <LEADER>eb :e ~/.bashrc<CR>
-nmap <LEADER>eg :e ~/.gitconfig<CR>
 nmap <LEADER>r :!wholine % <C-r>=line('.')<CR><CR>
 nmap <LEADER>t :Find<SPACE>
 
