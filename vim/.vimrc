@@ -24,6 +24,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
 Plug 'Chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-elixir'
@@ -90,3 +91,17 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+if isdirectory($HOME . '/.vim-swap') == 0
+  :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
+endif
+set directory=~/.vim-swap//
+if isdirectory($HOME . '/.vim-backup') == 0
+  :silent !mkdir -p ~/.vim-backup >/dev/null 2>&1
+endif
+set backupdir=~/.vim-backup/
+
+set undofile
+set undodir=$HOME/.vim-undo
+set undolevels=1000
+set undoreload=10000
