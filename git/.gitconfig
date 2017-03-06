@@ -14,5 +14,5 @@
   co = checkout
   hs = log --pretty='format:%C(yellow)%h %Creset- %C(white)%s %C(bold blue)[%an]%Creset %Cgreen%cr' --graph
   s = status -s
-  up = !git pull --rebase $@ && git submodule update --remote --merge
+  up = !git pull --rebase $@ && git submodule update --init --recursive && git submodule update --remote --merge
   yolo = push -f
