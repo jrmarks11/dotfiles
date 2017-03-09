@@ -17,6 +17,20 @@ set noerrorbells
 set visualbell
 set wildignore+=*/.git/*,*/tmp/*,*.swp
 
+if isdirectory($HOME . '/.vim-swap') == 0
+  :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
+endif
+set directory=~/.vim-swap//
+if isdirectory($HOME . '/.vim-backup') == 0
+  :silent !mkdir -p ~/.vim-backup >/dev/null 2>&1
+endif
+set backupdir=~/.vim-backup/
+
+set undofile
+set undodir=$HOME/.vim-undo
+set undolevels=1000
+set undoreload=10000
+
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'junegunn/fzf', { 'do': './install --all' }
@@ -80,7 +94,7 @@ let g:EasyMotion_smartcase = 1
 nmap <LEADER>j <Plug>(easymotion-j)
 nmap <LEADER>k <Plug>(easymotion-k)
 nmap <LEADER>l :Autoformat<CR>
-nmap t :FZF<CR>
+nnoremap t :FZF<CR>
 nmap <LEADER>/ :nohlsearch<CR>
 nmap \ <Plug>CommentaryLine
 vmap \ <Plug>Commentary
@@ -92,16 +106,3 @@ nmap ga <Plug>(EasyAlign)
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
-if isdirectory($HOME . '/.vim-swap') == 0
-  :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
-endif
-set directory=~/.vim-swap//
-if isdirectory($HOME . '/.vim-backup') == 0
-  :silent !mkdir -p ~/.vim-backup >/dev/null 2>&1
-endif
-set backupdir=~/.vim-backup/
-
-set undofile
-set undodir=$HOME/.vim-undo
-set undolevels=1000
-set undoreload=10000
