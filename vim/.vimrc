@@ -69,6 +69,7 @@ xnoremap y y`]
 xnoremap p p`]
 nnoremap p p`]
 nmap Y y$
+nmap Q @q
 nmap K i<CR><ESC>
 nmap q: :q
 
