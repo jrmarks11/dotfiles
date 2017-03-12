@@ -47,7 +47,10 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'easymotion/vim-easymotion'
 Plug 'vim-elixir'
 Plug 'tomasr/molokai'
+Plug 'takac/vim-hardtime'
 call plug#end()
+
+let g:hardtime_default_on = 1
 
 syntax on
 filetype on

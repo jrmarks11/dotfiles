@@ -34,3 +34,6 @@
 [submodule "vim/.vim/plugged/vim-endwise"]
 	path = vim/.vim/plugged/vim-endwise
 	url = git@github.com:tpope/vim-endwise.git
+[submodule "vim/.vim/plugged/vim-hardtime"]
+	path = vim/.vim/plugged/vim-hardtime
+	url = git@github.com:takac/vim-hardtime.git
