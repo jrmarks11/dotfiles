@@ -25,7 +25,7 @@ set directory=~/.vim-swap//
 if isdirectory($HOME . '/.vim-backup') == 0
   :silent !mkdir -p ~/.vim-backup >/dev/null 2>&1
 endif
-set backupdir=~/.vim-backup/
+set backupdir=~/.vim-backup//
 
 if isdirectory($HOME . '/.vim-undo') == 0
   :silent !mkdir -p ~/.vim-undo >/dev/null 2>&1
@@ -64,11 +64,11 @@ nnoremap k gk
 nnoremap <ENTER> <C-d>
 nnoremap <LEADER><ENTER> <C-u>
 nmap B ^
-inoremap kj <ESC>
-inoremap jk <ESC>
-xnoremap v <ESC>
-cnoremap kj <C-c>
-cnoremap jk <C-c>
+" inoremap kj <ESC>
+" inoremap jk <ESC>
+" xnoremap v <ESC>
+" cnoremap kj <C-c>
+" cnoremap jk <C-c>
 xnoremap y y`]
 xnoremap p p`]
 nnoremap p p`]
