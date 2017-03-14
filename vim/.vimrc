@@ -16,6 +16,7 @@ set smartcase
 set noerrorbells
 set visualbell
 set wildignore+=*/.git/*,*/tmp/*,*.swp
+set relativenumber
 
 if isdirectory($HOME . '/.vim-swap') == 0
   :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
@@ -43,8 +44,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
-Plug 'Chiel92/vim-autoformat'
-Plug 'easymotion/vim-easymotion'
 Plug 'vim-elixir'
 Plug 'tomasr/molokai'
 Plug 'takac/vim-hardtime'
@@ -66,15 +65,6 @@ nnoremap j gj
 nnoremap k gk
 nnoremap <ENTER> <C-d>
 nnoremap <LEADER><ENTER> <C-u>
-nmap B ^
-" inoremap kj <ESC>
-" inoremap jk <ESC>
-" xnoremap v <ESC>
-" cnoremap kj <C-c>
-" cnoremap jk <C-c>
-xnoremap y y`]
-xnoremap p p`]
-nnoremap p p`]
 nmap Y y$
 nmap Q @q
 nmap K i<CR><ESC>
@@ -94,18 +84,9 @@ nmap <LEADER>o o<ESC>
 nmap <LEADER>O O<ESC>
 nmap <LEADER>d dd<ESC>
 nmap <LEADER>r :!wholine % <C-r>=line('.')<CR><CR>
-nmap <LEADER>t :Find<SPACE>
-
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-nmap s <Plug>(easymotion-overwin-f2)
-let g:EasyMotion_smartcase = 1
-nmap <LEADER>j <Plug>(easymotion-j)
-nmap <LEADER>k <Plug>(easymotion-k)
-nmap <LEADER>l :Autoformat<CR>
-nnoremap t :FZF<CR>
+nmap <LEADER>t :FZF<CR>
+nmap <LEADER>f :Find<SPACE>
 nmap <LEADER>/ :nohlsearch<CR>
-nmap \ <Plug>CommentaryLine
-vmap \ <Plug>Commentary
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
