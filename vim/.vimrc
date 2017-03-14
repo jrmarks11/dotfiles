@@ -63,19 +63,17 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 nnoremap j gj
 nnoremap k gk
-nnoremap <ENTER> <C-d>
-nnoremap <LEADER><ENTER> <C-u>
 nmap Y y$
 nmap Q @q
 nmap K i<CR><ESC>
 nmap q: :q
 
-nnoremap <TAB> :bn<CR>
-nnoremap <S-TAB> :bp<CR>
+nnoremap \ :bn<CR>
 nnoremap - :bd<CR>
 inoremap <TAB> <C-N>
 inoremap <S-TAB> <C-P>
 
+nmap <LEADER>\ :bp<CR>
 nmap <LEADER>w :w<CR>
 nmap <LEADER>y "*y
 xmap <LEADER>y "*y

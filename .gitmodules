@@ -1,10 +1,7 @@
-[submodule "vim/.vim/bundle/vim-autoformat"]
-	path = vim/.vim/plugged/vim-autoformat
-	url = git@github.com:Chiel92/vim-autoformat.git
-[submodule "vim/.vim/bundle/vim-sensible"]
+[submodule "vim/.vim/plugged/vim-sensible"]
 	path = vim/.vim/plugged/vim-sensible
 	url = git@github.com:tpope/vim-sensible.git
-[submodule "vim/.vim/molokai"]
+[submodule "vim/.vim/plugged/molokai"]
 	path = vim/.vim/plugged/molokai
 	url = git@github.com:tomasr/molokai.git
 [submodule "vim/.vim/vim-plug"]
@@ -13,13 +10,10 @@
 [submodule "vim/.vim/plugged/fzf.vim"]
 	path = vim/.vim/plugged/fzf.vim
 	url = git@github.com:junegunn/fzf.vim.git
-[submodule "vim/.vim/bundle/vim-surround"]
+[submodule "vim/.vim/plugged/vim-surround"]
 	path = vim/.vim/plugged/vim-surround
 	url = git@github.com:tpope/vim-surround.git
-[submodule "vim/.vim/bundle/vim-easymotion"]
-	path = vim/.vim/plugged/vim-easymotion
-	url = git@github.com:easymotion/vim-easymotion.git
-[submodule "vim/.vim/bundle/vim-commentary"]
+[submodule "vim/.vim/plugged/vim-commentary"]
 	path = vim/.vim/plugged/vim-commentary
 	url = git@github.com:tpope/vim-commentary.git
 [submodule "vim/.vim/plugged/fzf"]
