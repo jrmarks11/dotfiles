@@ -16,7 +16,6 @@ set smartcase
 set noerrorbells
 set visualbell
 set wildignore+=*/.git/*,*/tmp/*,*.swp
-set relativenumber
 
 if isdirectory($HOME . '/.vim-swap') == 0
   :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
