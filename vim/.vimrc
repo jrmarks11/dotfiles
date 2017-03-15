@@ -38,12 +38,12 @@ set undoreload=10000
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
-Plug 'junegunn/fzf', { 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
+Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'vim-elixir'
 Plug 'tomasr/molokai'
 Plug 'takac/vim-hardtime'
