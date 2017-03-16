@@ -65,7 +65,6 @@ nnoremap k gk
 nmap Y y$
 nmap Q @q
 nmap K i<CR><ESC>
-nmap q: :q
 
 nnoremap \ :bn<CR>
 nnoremap - :bd<CR>
