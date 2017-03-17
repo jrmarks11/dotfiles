@@ -60,8 +60,6 @@ highlight LineNr guifg=#cccccc
 
 autocmd BufWritePre * :%s/\s\+$//e
 
-nnoremap j gj
-nnoremap k gk
 nmap Y y$
 nmap Q @q
 nmap K i<CR><ESC>
