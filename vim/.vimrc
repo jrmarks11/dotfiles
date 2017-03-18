@@ -63,12 +63,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 nmap Y y$
 nmap Q @q
 nmap K i<CR><ESC>
-
 nnoremap \ :bn<CR>
 nnoremap - :bd<CR>
-inoremap <TAB> <C-N>
-inoremap <S-TAB> <C-P>
-
 nmap <LEADER>\ :bp<CR>
 nmap <LEADER>w :w<CR>
 nmap <LEADER>y "+y
@@ -81,6 +77,8 @@ nmap <LEADER>r :!wholine % <C-r>=line('.')<CR><CR>
 nmap <LEADER>t :FZF<CR>
 nmap <LEADER>f :Find<SPACE>
 nmap <LEADER>/ :nohlsearch<CR>
+nmap <LEADER>n nzz
+nmap <LEADER>N Nzz
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
