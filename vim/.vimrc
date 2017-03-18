@@ -71,9 +71,9 @@ inoremap <S-TAB> <C-P>
 
 nmap <LEADER>\ :bp<CR>
 nmap <LEADER>w :w<CR>
-nmap <LEADER>y "*y
-xmap <LEADER>y "*y
-nmap <LEADER>p "*p
+nmap <LEADER>y "+y
+xmap <LEADER>y "+y
+nmap <LEADER>p "+p
 nmap <LEADER>o o<ESC>
 nmap <LEADER>O O<ESC>
 nmap <LEADER>d dd<ESC>
