@@ -22,11 +22,6 @@ if isdirectory($HOME . '/.vim-swap') == 0
 endif
 set directory=~/.vim-swap//
 
-if isdirectory($HOME . '/.vim-backup') == 0
-  :silent !mkdir -p ~/.vim-backup >/dev/null 2>&1
-endif
-set backupdir=~/.vim-backup//
-
 if isdirectory($HOME . '/.vim-undo') == 0
   :silent !mkdir -p ~/.vim-undo >/dev/null 2>&1
 endif
