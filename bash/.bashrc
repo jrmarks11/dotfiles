@@ -59,7 +59,6 @@ export HISTSIZE=10000
 export HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
 stty -ixon
-bind 'TAB:menu-complete'
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # If there is a bin directory in the users home add it to path
@@ -75,6 +74,9 @@ fi
 
 # prompt
 GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_STATESEPARATOR=""
 PS1_COLOR_RESET="\[\e[0m\]"
 PS1_DIR_COLOR="\[\e[00;37m\]"
 PS1_GIT_BRANCH="\[\e[0;35m\]\$(__git_ps1)"
