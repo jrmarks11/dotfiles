@@ -1,4 +1,14 @@
-# chruby
+autoload -Uz compinit
+compinit
+bindkey -e
+# bindkey '^R' history-incremental-search-backward
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# bindkey '^ ' autosuggest-accept
+
+autoload -U promptinit; promptinit
+prompt pure
+
 [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ] && . /usr/local/opt/chruby/share/chruby/chruby.sh
 command -v chruby >/dev/null 2>&1  && { chruby 2.2.2; }
 
@@ -20,37 +30,41 @@ fi
 #functions
 cl() { history -p '!!'|tr -d \\n|pbcopy; }
 
-#shortcuts for bundle
 alias be='bundle exec'
 alias ber='bundle exec rspec'
 alias bec='bundle exec rails c'
 alias rf='rg --files --glob'
 
-# export DISPLAY=:0.0
-# export EDITOR=/usr/local/bin/vim
+export EDITOR=/usr/local/bin/vim
 
-# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
-# # zsh settings.
-# export HISTSIZE=10000
-# export SAVEHIST=10000
-# export HISTFILE=~/.zsh_history
-# bindkey -e
-# bindkey '^R' history-incremental-search-backward
-# autoload -U promptinit; promptinit
-# prompt pure
-# source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# bindkey '^ ' autosuggest-accept
-# export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
-# autoload -Uz compinit
-# compinit
-# setopt inc_append_history
-# setopt share_history
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTFILE=~/.zsh_history
+setopt inc_append_history
+setopt share_history
 
+# fzf.
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# # fzf.
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# fasd
+if [[ $(command -v fasd) ]]; then
+  fasd_cache="$HOME/.fasd-init-zsh"
+  if [ "$(command -v fasd)" -nt "$fasd_cache" -o ! -s "$fasd_cache" ]; then
+    fasd --init posix-alias zsh-hook zsh-ccomp zsh-ccomp-install zsh-wcomp zsh-wcomp-install>| "$fasd_cache"
+  fi
+  source "$fasd_cache"
+  unset fasd_cache
 
-# # fasd.
-# eval "$(fasd --init auto)"
-# alias j='fasd_cd -d'
+  alias j='fasd_cd -d'
+  alias jj='fasd_cd -d -i'
+  alias v='f -e vim'
+  vv() {
+    local files
+    files=$(grep '^>' ~/.viminfo | cut -c3- |
+            while read line; do
+              [ -f "${line/\~/$HOME}" ] && echo "$line"
+            done | fzf-tmux -d -m -q "$*" -1) && vim ${files//\~/$HOME}
+  }
+fi
