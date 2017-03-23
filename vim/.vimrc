@@ -15,6 +15,7 @@ set ignorecase
 set smartcase
 set noerrorbells
 set visualbell
+set clipboard=unnamed
 set wildignore+=*/.git/*,*/tmp/*,*.swp
 
 if isdirectory($HOME . '/.vim-swap') == 0
@@ -25,6 +26,7 @@ set directory=~/.vim-swap//
 if isdirectory($HOME . '/.vim-undo') == 0
   :silent !mkdir -p ~/.vim-undo >/dev/null 2>&1
 endif
+
 set undofile
 set undodir=$HOME/.vim-undo
 set undolevels=1000
@@ -56,15 +58,11 @@ highlight LineNr guifg=#cccccc
 autocmd BufWritePre * :%s/\s\+$//e
 
 nmap Y y$
-nmap Q @q
 nmap K i<CR><ESC>
 nnoremap \ :bn<CR>
 nnoremap - :bd<CR>
 nmap <LEADER>\ :bp<CR>
 nmap <LEADER>w :w<CR>
-nmap <LEADER>y "+y
-xmap <LEADER>y "+y
-nmap <LEADER>p "+p
 nmap <LEADER>o o<ESC>
 nmap <LEADER>O O<ESC>
 nmap <LEADER>d dd<ESC>
@@ -72,8 +70,6 @@ nmap <LEADER>r :!wholine % <C-r>=line('.')<CR><CR>
 nmap <LEADER>t :FZF<CR>
 nmap <LEADER>f :Find<SPACE>
 nmap <LEADER>/ :nohlsearch<CR>
-nmap <LEADER>n nzz
-nmap <LEADER>N Nzz
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
