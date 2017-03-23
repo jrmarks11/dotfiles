@@ -54,11 +54,11 @@ command -v hub >/dev/null 2>&1 && { eval "$(hub alias -s)"; }
 
 alias ls='ls -G'
 
-# Control the command history
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 export HISTCONTROL=ignoreboth:erasedups
 stty -ixon
+bind 'TAB:menu-complete'
 
 # If there is a bin directory in the users home add it to path
 if [ -d "$HOME/bin" ] ; then
