@@ -57,8 +57,10 @@ alias ls='ls -G'
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 export HISTCONTROL=ignoreboth:erasedups
+shopt -s histappend
 stty -ixon
 bind 'TAB:menu-complete'
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 
 # If there is a bin directory in the users home add it to path
 if [ -d "$HOME/bin" ] ; then
@@ -74,16 +76,18 @@ fi
 # prompt
 GIT_PS1_SHOWDIRTYSTATE=1
 PS1_COLOR_RESET="\[\e[0m\]"
-PS1_DIRECTORY="\[\e[00;37m\]\w"
+PS1_DIR_COLOR="\[\e[00;37m\]"
 PS1_GIT_BRANCH="\[\e[0;35m\]\$(__git_ps1)"
 
 PS1_COMBINED=""
-PS1_COMBINED+=$PS1_DIRECTORY
+PS1_COMBINED+=$PS1_DIR_COLOR
+PS1_COMBINED+="\w"
 PS1_COMBINED+=$PS1_GIT_BRANCH
-PS1_COMBINED+=$PS1_COLOR_RESET
 PS1_COMBINED+="\n"
+PS1_COMBINED+=$PS1_DIR_COLOR
 PS1_COMBINED+=$MY_HOST
 PS1_COMBINED+=" ❯"
+PS1_COMBINED+=$PS1_COLOR_RESET
 
 export PS1=$PS1_COMBINED
 
