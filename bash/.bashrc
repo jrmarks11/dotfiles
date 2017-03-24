@@ -74,7 +74,7 @@ COLOR_RESET="\[\e[0m\]"
 WHITE="\[\e[00;37m\]"
 PURPLE="\[\e[00;35m\]"
 BLUE="\[\e[00;34m\]"
-DARK_GRAY="\[\e[00;36m\]"
+DARK_GRAY="\[\e[02;39m\]"
 
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUPSTREAM="auto"
