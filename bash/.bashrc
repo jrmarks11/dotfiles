@@ -52,8 +52,6 @@ command -v hub >/dev/null 2>&1 && { eval "$(hub alias -s)"; }
 # git status
 [ -f ~/.git-prompt.sh ] && . ~/.git-prompt.sh
 
-alias ls='ls -G'
-
 export HISTFILESIZE=10000
 export HISTSIZE=10000
 export HISTCONTROL=ignoreboth:erasedups
@@ -72,25 +70,30 @@ if [ -z "$SSH_AUTH_SOCK" ] ; then
   ssh-add
 fi
 
-# prompt
+COLOR_RESET="\[\e[0m\]"
+WHITE="\[\e[00;37m\]"
+PURPLE="\[\e[00;35m\]"
+BLUE="\[\e[00;34m\]"
+DARK_GRAY="\[\e[00;36m\]"
+
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_STATESEPARATOR=""
-PS1_COLOR_RESET="\[\e[0m\]"
-PS1_DIR_COLOR="\[\e[00;37m\]"
-PS1_GIT_BRANCH="\[\e[0;35m\]\$(__git_ps1)"
+GIT_BRANCH="\$(__git_ps1)"
 
 PS1_COMBINED=""
-PS1_COMBINED+=$PS1_DIR_COLOR
+PS1_COMBINED+=$BLUE
 PS1_COMBINED+="\w"
-PS1_COMBINED+=$PS1_GIT_BRANCH
+PS1_COMBINED+=$DARK_GRAY
+PS1_COMBINED+=$GIT_BRANCH
 PS1_COMBINED+="\n"
-PS1_COMBINED+=$PS1_DIR_COLOR
+PS1_COMBINED+=$PURPLE
 PS1_COMBINED+=$MY_HOST
 PS1_COMBINED+=" ❯"
 PS1_COMBINED+=$PS1_COLOR_RESET
 
+export CLICOLOR=1
 export PS1=$PS1_COMBINED
 
 #set default bash editor to vim
