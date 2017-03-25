@@ -17,6 +17,7 @@ set noerrorbells
 set visualbell
 set clipboard=unnamed
 set wildignore+=*/.git/*,*/tmp/*,*.swp
+set list listchars=tab:▸\ ,trail:·
 
 if isdirectory($HOME . '/.vim-swap') == 0
   :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
