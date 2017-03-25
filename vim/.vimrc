@@ -45,7 +45,7 @@ Plug 'tomasr/molokai'
 Plug 'takac/vim-hardtime'
 call plug#end()
 
-let g:hardtime_default_on = 1
+let g:hardtime_default_on = 0
 
 syntax on
 filetype on
