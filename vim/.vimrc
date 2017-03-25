@@ -50,6 +50,8 @@ Plug 'takac/vim-hardtime'
 call plug#end()
 
 let g:hardtime_default_on = 0
+let g:surround_{char2nr('-')} = "<% \r %>"
+let g:surround_{char2nr('=')} = "<%= \r %>"
 
 syntax on
 filetype on
@@ -75,9 +77,7 @@ nmap <LEADER>t :FZF<CR>
 nmap <LEADER>f :Find<SPACE>
 nmap <LEADER>/ :nohlsearch<CR>
 
-" Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
