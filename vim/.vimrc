@@ -37,6 +37,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -66,7 +67,7 @@ nmap <LEADER>w :w<CR>
 nmap <LEADER>o o<ESC>
 nmap <LEADER>O O<ESC>
 nmap <LEADER>d dd<ESC>
-nmap <LEADER>r :!wholine % <C-r>=line('.')<CR><CR>
+nmap <LEADER>r :Gblame<CR>
 nmap <LEADER>t :FZF<CR>
 nmap <LEADER>f :Find<SPACE>
 nmap <LEADER>/ :nohlsearch<CR>
