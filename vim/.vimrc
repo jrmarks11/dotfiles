@@ -46,7 +46,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'vim-elixir'
 Plug 'tomasr/molokai'
-Plug 'takac/vim-hardtime'
 Plug 'AndrewRadev/splitjoin.vim'
 call plug#end()
 
