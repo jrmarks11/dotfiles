@@ -37,3 +37,6 @@
 [submodule "vim/.vim/plugged/vim-rails"]
 	path = vim/.vim/plugged/vim-rails
 	url = git@github.com:tpope/vim-rails.git
+[submodule "vim/.vim/plugged/splitjoin.vim"]
+	path = vim/.vim/plugged/splitjoin.vim
+	url = git@github.com:AndrewRadev/splitjoin.vim.git
