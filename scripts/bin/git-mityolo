@@ -1,0 +1,30 @@
+#!/bin/sh
+
+git add .
+git commit --amend --no-edit
+git yolo
+APP_ID=$1 bundle exec cap testing deploy
+
+usage() {
+  cat << EOF
+    Usage: $0 [options] app_id
+
+        --help:  this message
+
+    Example:
+
+       git mityolo ehr9
+EOF
+exit 1
+}
+
+if [ $# -eq 0 ]; then
+  usage
+fi
+
+
+APP_ID=$1
+echo 'it add .'
+echo 'it commit --amend --no-edit'
+echo 'it yolo'
+echo 'PP_ID=$APP_ID bundle exec cap testing deploy'
