@@ -40,6 +40,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-unimpaired'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -64,12 +65,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 nmap Y y$
 nmap K i<CR><ESC>
-nnoremap \ :bn<CR>
 nnoremap - :bd<CR>
-nmap <LEADER>\ :bp<CR>
 nmap <LEADER>w :w<CR>
-nmap <LEADER>o o<ESC>
-nmap <LEADER>O O<ESC>
 nmap <LEADER>d dd<ESC>
 nmap <LEADER>r :Gblame<CR>
 nmap <LEADER>t :FZF<CR>
