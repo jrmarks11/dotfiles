@@ -1,19 +1,9 @@
 #!/bin/sh
 
-git add .
-git commit --amend --no-edit
-git yolo
-APP_ID=$1 bundle exec cap testing deploy
-
 usage() {
   cat << EOF
-    Usage: $0 [options] app_id
-
-        --help:  this message
-
-    Example:
-
-       git mityolo ehr9
+    Usage: $0 app_id
+    Example: git mityolo ehr9
 EOF
 exit 1
 }
@@ -22,9 +12,20 @@ if [ $# -eq 0 ]; then
   usage
 fi
 
+BRANCH_NAME="$(git symbolic-ref HEAD 2>/dev/null)" ||
+BRANCH_NAME="(unnamed branch)"
 
-APP_ID=$1
-echo 'it add .'
-echo 'it commit --amend --no-edit'
-echo 'it yolo'
-echo 'PP_ID=$APP_ID bundle exec cap testing deploy'
+if [[ $BRANCH_NAME == */master ]]; then
+  echo "You cannot yolo master you donk!"
+  exit 0
+fi
+
+if [[ $BRANCH_NAME == "(unnamed branch)"]]; then
+  echo "You dont even have a branch friend"
+  exit 0
+fi
+
+git add .
+git commit --amend --no-edit
+git push -f
+APP_ID=$1 bundle exec cap testing deploy
