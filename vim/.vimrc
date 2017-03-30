@@ -66,8 +66,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 nmap Y y$
 nmap K i<CR><ESC>
 nnoremap - :bd<CR>
+nmap [d dd<ESC>
+nmap ]d [d
 nmap <LEADER>w :w<CR>
-nmap <LEADER>d dd<ESC>
 nmap <LEADER>r :Gblame<CR>
 nmap <LEADER>t :FZF<CR>
 nmap <LEADER>f :Find<SPACE>
