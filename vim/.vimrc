@@ -27,6 +27,13 @@ if isdirectory($HOME . '/.vim-undo') == 0
   :silent !mkdir -p ~/.vim-undo >/dev/null 2>&1
 endif
 
+if executable('rg')
+  set grepprg=rg\ --no-heading\ --vimgrep\ --smart-case
+elseif executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+endif
+set grepformat=%f:%l:%c:%m
+
 set undofile
 set undodir=$HOME/.vim-undo
 set undolevels=1000
@@ -48,7 +55,6 @@ Plug 'tomasr/molokai'
 Plug 'AndrewRadev/splitjoin.vim'
 call plug#end()
 
-let g:hardtime_default_on = 0
 let g:surround_{char2nr('-')} = "<% \r %>"
 let g:surround_{char2nr('=')} = "<%= \r %>"
 
@@ -77,8 +83,3 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-
-if executable('rg')
-  set grepprg=rg\ --no-heading\ --vimgrep\ --smart-case
-  set grepformat=%f:%l:%c:%m
-endif
