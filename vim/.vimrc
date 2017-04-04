@@ -79,7 +79,19 @@ nmap <LEADER>t :FZF<CR>
 nmap <LEADER>f :Find<SPACE>
 nmap <LEADER>/ :nohlsearch<CR>
 
+function Rspec_line()
+  execute "!" ."bundle exec rspec " . bufname("%") . ':' . line(".")
+endfunction
+
+function Rspec_file()
+  execute "!" ."bundle exec rspec " . bufname("%")
+endfunction
+
+command Runrspecline call Rspec_line()
+command Runrspecfile call Rspec_file()
+
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
