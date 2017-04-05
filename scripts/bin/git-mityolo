@@ -20,7 +20,7 @@ if [[ $BRANCH_NAME == */master ]]; then
   exit 0
 fi
 
-if [[ $BRANCH_NAME == "(unnamed branch)"]]; then
+if [[ $BRANCH_NAME == "(unnamed branch)" ]]; then
   echo "You dont even have a branch friend"
   exit 0
 fi
