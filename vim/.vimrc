@@ -78,17 +78,19 @@ nmap <LEADER>r :Gblame<CR>
 nmap <LEADER>t :FZF<CR>
 nmap <LEADER>f :Find<SPACE>
 nmap <LEADER>/ :nohlsearch<CR>
+nmap <LEADER>s :Runspecfile<CR>
+nmap <LEADER>l :Runspecline<CR>
 
 function Rspec_line()
-  execute "!" ."bundle exec rspec " . bufname("%") . ':' . line(".")
+  execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".")
 endfunction
 
 function Rspec_file()
-  execute "!" ."bundle exec rspec " . bufname("%")
+  execute "!" . "bundle exec rspec " . bufname("%")
 endfunction
 
-command Runrspecline call Rspec_line()
-command Runrspecfile call Rspec_file()
+command Runspecline call Rspec_line()
+command Runspecfile call Rspec_file()
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
