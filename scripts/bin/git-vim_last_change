@@ -1,0 +1,5 @@
+#!/bin/sh
+
+LAST_SHA=`git rev-parse HEAD~1`
+
+vim `git diff $LAST_SHA --name-only`
