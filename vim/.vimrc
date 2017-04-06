@@ -1,22 +1,23 @@
 let mapleader=' '
-set nocompatible
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set hlsearch
-set number
-set shell=bash
+set clipboard=unnamed
 set colorcolumn=80
 set cursorline
+set expandtab
 set hidden
-set shiftround
-set showmatch
+set hlsearch
 set ignorecase
-set smartcase
-set noerrorbells
-set visualbell
-set clipboard=unnamed
 set list listchars=tab:▸\ ,trail:·
+set nocompatible
+set noerrorbells
+set number
+set relativenumber
+set shell=bash
+set shiftround
+set shiftwidth=2
+set showmatch
+set smartcase
+set tabstop=2
+set visualbell
 
 if isdirectory($HOME . '/.vim-swap') == 0
   :silent !mkdir -p ~/.vim-swap >/dev/null 2>&1
