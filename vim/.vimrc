@@ -11,7 +11,6 @@ set nocompatible
 set noerrorbells
 set number
 set relativenumber
-set shell=bash
 set shiftround
 set shiftwidth=2
 set showmatch
