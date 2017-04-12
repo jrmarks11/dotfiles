@@ -66,7 +66,7 @@ filetype plugin on
 colors molokai
 highlight LineNr guifg=#cccccc
 
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre * : %s/\n\n\n\+//e | %s/\s\+$//e
 
 nmap Y y$
 nmap K i<CR><ESC>
