@@ -6,7 +6,7 @@ set expandtab
 set hidden
 set hlsearch
 set ignorecase
-set list listchars=tab:▸\ ,trail:·
+set list listchars=tab:▸\ ,trail:·,nbsp:␣
 set nocompatible
 set noerrorbells
 set number
@@ -96,4 +96,3 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-
