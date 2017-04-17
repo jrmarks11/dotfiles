@@ -81,6 +81,7 @@ nmap <LEADER>f :Find<SPACE>
 nmap <LEADER>/ :nohlsearch<CR>
 nmap <LEADER>s :Runspecfile<CR>
 nmap <LEADER>l :Runspecline<CR>
+nmap <LEADER>. @@
 
 function Rspec_line()
   execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".")
