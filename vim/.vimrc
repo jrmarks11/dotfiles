@@ -78,7 +78,6 @@ nmap <LEADER>w :w<CR>
 nmap <LEADER>r :Gblame<CR>
 nmap <LEADER>t :FZF<CR>
 nmap <LEADER>f :Find<SPACE>
-nmap <LEADER>/ :nohlsearch<CR>
 nmap <LEADER>s :Runspecfile<CR>
 nmap <LEADER>l :Runspecline<CR>
 nmap <LEADER>. @@
