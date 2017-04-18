@@ -72,8 +72,8 @@ autocmd BufWritePre * : %s/\n\n\n\+//e | %s/\s\+$//e
 nmap Y y$
 nmap K i<CR><ESC>
 nnoremap - :bd<CR>
-nmap [d dd<ESC>
-nmap ]d [d
+nmap ]d dd<ESC>
+nmap [d [dk
 nmap <LEADER>w :w<CR>
 nmap <LEADER>r :Gblame<CR>
 nmap <LEADER>t :FZF<CR>
