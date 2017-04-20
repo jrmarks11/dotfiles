@@ -24,6 +24,7 @@ let g:surround_{char2nr('=')} = "<%= \r %>"
 colors molokai
 highlight LineNr guifg=#cccccc
 
+" Remove extra newlines and trailng whitspace when saving
 autocmd BufWritePre * : %s/\n\n\n\+//e | %s/\s\+$//e
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
@@ -45,12 +46,12 @@ nmap <LEADER>. @@
 nmap <LEADER>b :Buffer<CR>
 
 function Rspec_line()
-  execute ":w"
+  execute ":wa"
   execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".")
 endfunction
 
 function Rspec_file()
-  execute ":w"
+  execute ":wa"
   execute "!" . "bundle exec rspec " . bufname("%")
 endfunction
 
