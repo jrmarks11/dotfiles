@@ -1,5 +1,9 @@
 #!/bin/sh
 
-LAST_SHA=`git rev-parse HEAD~1`
+if [[ $# -eq 1 ]] ; then
+  SHA=$1
+else
+  SHA=`git rev-parse HEAD~1`
+fi
 
-vim `git diff $LAST_SHA --name-only`
+vim `git diff $SHA --name-only`
