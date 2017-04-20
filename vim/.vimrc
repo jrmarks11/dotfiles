@@ -81,12 +81,15 @@ nmap <LEADER>f :Find<SPACE>
 nmap <LEADER>s :Runspecfile<CR>
 nmap <LEADER>l :Runspecline<CR>
 nmap <LEADER>. @@
+nmap <LEADER>b :Buffer<CR>
 
 function Rspec_line()
+  execute ":w"
   execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".")
 endfunction
 
 function Rspec_file()
+  execute ":w"
   execute "!" . "bundle exec rspec " . bufname("%")
 endfunction
 
@@ -97,3 +100,9 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 20
