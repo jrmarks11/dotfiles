@@ -15,7 +15,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'vim-elixir'
+Plug 'elixir-lang/vim-elixir'
 call plug#end()
 
 let g:surround_{char2nr('-')} = "<% \r %>"
