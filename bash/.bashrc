@@ -64,6 +64,8 @@ if [ -d "$HOME/bin" ] ; then
   PATH="$PATH:$HOME/bin"
 fi
 
+export PATH="/usr/local/sbin:$PATH"
+
 # setup ssh
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s`
