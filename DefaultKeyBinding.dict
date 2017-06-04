@@ -1,0 +1,56 @@
+{
+/* Keybindings for emacs emulation.  Compiled by Jacob Rus.
+ *
+ * This is a pretty good set, especially considering that many emacs bindings
+ * such as C-o, C-a, C-e, C-k, C-y, C-v, C-f, C-b, C-p, C-n, C-t, and
+ * perhaps a few more, are already built into the system.
+ *
+ * This file uses Esc for commands that use the meta key, because if the
+ * option key was used, it would override existing Macintosh key bindings.
+ */
+
+    /* We are going to override the Esc binding for complete, so add Esc Esc */
+    "\U001B"    = {"\U001B" = "complete:";};        /* Esc Esc      Complete */
+
+    /* Ctrl shortcuts */
+    "^l"        = "centerSelectionInVisibleArea:";  /* C-l          Recenter */
+    "^/"        = "undo:";                          /* C-/          Undo */
+    "^ "        = "setMark:";                       /* C-Spc        Set mark */
+    "^w"        = "deleteToMark:";                  /* C-w          Delete to mark */
+
+    /* Meta shortcuts */
+    "\U001B" = {
+        "f"     = "moveWordForward:";               /* Esc f        Move forward word */
+        "b"     = "moveWordBackward:";              /* Esc b        Move backward word */
+        "<"     = "moveToBeginningOfDocument:";     /* Esc <        Move to beginning of document */
+        ">"     = "moveToEndOfDocument:";           /* Esc >        Move to end of document */
+        "v"     = "pageUp:";                        /* Esc v        Page Up */
+        "/"     = "complete:";                      /* Esc /        Complete */
+        "c"     = ( "capitalizeWord:",              /* Esc c        Capitalize */
+                    "moveForward:",
+                    "moveForward:");
+        "u"     = ( "uppercaseWord:",               /* Esc u        Uppercase */
+                    "moveForward:",
+                    "moveForward:");
+        "l"     = ( "lowercaseWord:",               /* Esc l        Lowercase */
+                    "moveForward:",
+                    "moveForward:");
+        "d"     = "deleteWordForward:";             /* Esc d        Delete word forward */
+        "\U007F"= "deleteWordBackward:";            /* Esc Bksp     Delete word backward */
+        "t"     = "transposeWords:";                /* Esc t        Transpose words */
+
+        "\@"    = ( "setMark:",                     /* Esc @        Mark word */
+                    "moveWordForward:",
+                    "swapWithMark");
+        "h"     = ( "setMark:",                     /* Esc h        Mark paragraph */
+                    "moveToEndOfParagraph:",
+                    "swapWithMark");
+    };
+
+    /* C-x shortcuts */
+    "^x" = {
+        "^x"    = "swapWithMark:";                  /* C-x C-x      Swap with mark */
+        "^m"    = "selectToMark:";                  /* C-x C-m      Select to mark*/
+    };
+
+}
