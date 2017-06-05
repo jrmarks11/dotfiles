@@ -64,6 +64,11 @@ if [ -d "$HOME/bin" ] ; then
   PATH="$PATH:$HOME/bin"
 fi
 
+# If I have dave brady's bin add it to path
+if [ -d "$HOME/dbrady-bin" ] ; then
+  PATH="$PATH:$HOME/dbrady-bin"
+fi
+
 export PATH="/usr/local/sbin:$PATH"
 
 # setup ssh
