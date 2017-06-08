@@ -47,12 +47,12 @@ nmap <LEADER>b :Buffer<CR>
 
 function Rspec_line()
   execute ":wa"
-  execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".")
+  execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".") . " --format d"
 endfunction
 
 function Rspec_file()
   execute ":wa"
-  execute "!" . "bundle exec rspec " . bufname("%")
+  execute "!" . "bundle exec rspec " . bufname("%") . " --format d"
 endfunction
 
 command Runspecline call Rspec_line()
