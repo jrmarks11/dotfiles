@@ -111,6 +111,6 @@ cl() { history -p '!!'|tr -d \\n|pbcopy; }
 
 #shortcuts for bundle
 alias be='bundle exec'
-alias ber='bundle exec rspec'
 alias bec='bundle exec rails c'
+alias ber='bundle exec rspec'
 alias rf='rg --files --glob'
