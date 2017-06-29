@@ -1,5 +1,3 @@
 (require 'package)
   (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
-(add-to-list 'load-path "~/.emacs.d/jmarks")
-(load "fzf")
