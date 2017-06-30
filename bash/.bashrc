@@ -121,4 +121,6 @@ cl() { history -p '!!'|tr -d \\n|pbcopy; }
 alias be='bundle exec'
 alias bec='bundle exec rails c'
 alias ber='bundle exec rspec'
+alias berfd='bundle exec rspec --format d'
 alias rf='rg --files --glob'
+alias em='emacs'
