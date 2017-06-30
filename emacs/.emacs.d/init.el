@@ -24,3 +24,15 @@
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c g") 'counsel-git)
+(require 'evil-leader)
+(require 'evil)
+(require 'recentf)
+(global-evil-leader-mode)
+(evil-mode 1)
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key
+  "g" 'counsel-git
+  "rf" 'counsel-recentf
+  "<SPC>" 'counsel-M-x
+ )
+(evil-commentary-mode)

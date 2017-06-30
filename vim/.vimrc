@@ -38,7 +38,12 @@ nmap K i<CR><ESC>
 nnoremap - :bd<CR>
 nmap <LEADER>w :w<CR>
 nmap <LEADER>r :Gblame<CR>
+nmap <LEADER>rf :History<CR>
+nmap <LEADER>; :History:<CR>
+nmap <LEADER>/ :History/<CR>
 nmap <LEADER>t :FZF<CR>
+nmap <LEADER>g :GFiles<CR>
+nmap <LEADER>gs :GFiles?<CR>
 nmap <LEADER>f :Find<SPACE>
 nmap <LEADER>s :Runspecfile<CR>
 nmap <LEADER>l :Runspecline<CR>
