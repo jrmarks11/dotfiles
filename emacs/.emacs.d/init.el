@@ -36,3 +36,5 @@
   "<SPC>" 'counsel-M-x
  )
 (evil-commentary-mode)
+(setcdr evil-insert-state-map nil)
+  (define-key evil-insert-state-map [escape] 'evil-normal-state)
