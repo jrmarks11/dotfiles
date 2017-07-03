@@ -30,7 +30,7 @@
  ;; if you edit it by hand, you could mess it up, so be careful.
  ;; your init file should contain only one such instance.
  ;; if there is more than one, they won't work right.
- '(package-selected-packages (quote (use-package))))
+ '(package-selected-packages (quote (use-package evil evil-commentary evil-leader counsel flx ivy))))
 (custom-set-faces
  ;; custom-set-faces was added by custom.
  ;; if you edit it by hand, you could mess it up, so be careful.
