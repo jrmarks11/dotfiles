@@ -10,7 +10,7 @@
 (setq coding-system-for-write 'utf-8 )
 (setq sentence-end-double-space nil)	; sentence should end with only a point.
 (setq default-fill-column 80)		; toggle wrapping text at the 80th character
-(setq initial-scratch-message "welcome in emacs") ; print a default message in the empty scratch buffer opened at startup
+(setq initial-scratch-message "") ; print a default message in the empty scratch buffer opened at startup
 (setq package-enable-at-startup nil)
 
 (setq package-archives '(("org"       . "http://orgmode.org/elpa/")
@@ -26,16 +26,20 @@
 
 (require 'use-package)
 (custom-set-variables
- ;; custom-set-variables was added by custom.
- ;; if you edit it by hand, you could mess it up, so be careful.
- ;; your init file should contain only one such instance.
- ;; if there is more than one, they won't work right.
- '(package-selected-packages (quote (use-package evil evil-commentary evil-leader counsel flx ivy))))
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(package-selected-packages (quote (solarized-theme use-package counsel flx ivy)))
+ '(tool-bar-mode nil))
 (custom-set-faces
- ;; custom-set-faces was added by custom.
- ;; if you edit it by hand, you could mess it up, so be careful.
- ;; your init file should contain only one such instance.
- ;; if there is more than one, they won't work right.
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  )
 
 (setq ivy-re-builders-alist
@@ -46,21 +50,11 @@
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
-(global-set-key (kbd "M-x") 'counsel-m-x)
+(global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "C-c g") 'counsel-git)
-(require 'evil-leader)
-(require 'evil)
+(global-set-key (kbd "C-c r") 'counsel-recentf)
 (require 'recentf)
-(global-evil-leader-mode)
-(evil-mode 1)
-(evil-leader/set-leader "<SPC>")
-(evil-leader/set-key
-  "g" 'counsel-git
-  "rf" 'counsel-recentf
-  "<SPC>" 'counsel-M-x
- )
-(evil-commentary-mode)
-(setcdr evil-insert-state-map nil)
-  (define-key evil-insert-state-map [escape] 'evil-normal-state)
-
+(add-hook 'after-init-hook (lambda () (load-theme 'solarized-light)))
+(menu-bar-mode -1)
+(tool-bar-mode -1)
