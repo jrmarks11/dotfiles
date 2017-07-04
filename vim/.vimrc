@@ -50,13 +50,16 @@ nmap <LEADER>s :Runspecfile<CR>
 nmap <LEADER>l :Runspecline<CR>
 nmap <LEADER>. @@
 nmap <LEADER>b :Buffer<CR>
+
+" window navigation
 map <LEADER>wj <C-w>j
 map <LEADER>wk <C-w>k
 map <LEADER>wh <C-w>h
 map <LEADER>wl <C-w>l
-map <LEADER>w/ :vsplit<CR>
-map <LEADER>w- :split<CR>
+map <LEADER>w/ <C-w>v
+map <LEADER>w- <C-w>s
 map <LEADER>wd <C-w>q
+map <LEADER>ww <C-w>w
 
 function Rspec_line()
   execute ":wa"

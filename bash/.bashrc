@@ -1,10 +1,10 @@
 # which environment am i on?
 if [[ $(hostname -s) =~ ^CMM ]]; then
-  MY_HOST="🤖";
+  MY_HOST="CMM";
 elif [[ $(hostname -s) =~ ^vagrant ]]; then
-  MY_HOST="💩";
+  MY_HOST="VAGRANT";
 else
-  MY_HOST="👽";
+  MY_HOST="";
 fi
 
 # source installed files
@@ -18,7 +18,7 @@ command -v brew >/dev/null 2>&1 &&
 
 # chruby
 [ -f /usr/local/opt/chruby/share/chruby/chruby.sh ] && . /usr/local/opt/chruby/share/chruby/chruby.sh
-command -v chruby >/dev/null 2>&1 && [[ "$MY_HOST" =~ '🤖'$ ]] && { chruby 2.2.2; }
+command -v chruby >/dev/null 2>&1 && [[ "$MY_HOST" =~ 'CMM'$ ]] && { chruby 2.2.2; }
 
 # fasd
 if [[ $(command -v fasd) ]]; then
@@ -101,10 +101,9 @@ PS1_COMBINED+=$BLUE
 PS1_COMBINED+="\w"
 PS1_COMBINED+=$DARK_GRAY
 PS1_COMBINED+=$GIT_BRANCH
-PS1_COMBINED+="\n"
 PS1_COMBINED+=$PURPLE
 PS1_COMBINED+=$MY_HOST
-PS1_COMBINED+=" ❯"
+PS1_COMBINED+=">"
 PS1_COMBINED+=$COLOR_RESET
 
 export CLICOLOR=1
