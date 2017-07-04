@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     markdown
      vimscript
      ;; ----------------------------------------------------------------
      ;; Example of useful layejs you may want to use right away.
@@ -42,7 +43,6 @@ values."
      ;; better-defaults
      ;; emacs-lisp
      git
-     ;; markdown
      org
      ;; tmux
      ruby-on-rails
