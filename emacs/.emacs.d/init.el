@@ -33,7 +33,9 @@
  '(custom-safe-themes
    (quote
     ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
- '(package-selected-packages (quote (solarized-theme use-package counsel flx ivy)))
+ '(package-selected-packages
+   (quote
+    (evil evil-commentary evil-leader evil-matchit evil-surround solarized-theme use-package counsel flx ivy)))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -55,6 +57,14 @@
 (global-set-key (kbd "C-c p") 'counsel-git)
 (global-set-key (kbd "C-c r") 'counsel-recentf)
 (require 'recentf)
-(add-hook 'after-init-hook (lambda () (load-theme 'solarized-dark)))
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(require 'evil)
+  (evil-mode 1)
+(add-hook 'after-init-hook (lambda () (load-theme 'solarized-dark)))
+(add-hook 'evil-normal-state-entry-hook
+          (lambda ()
+            (load-theme 'solarized-dark)))
+(add-hook 'evil-emacs-state-entry-hook
+          (lambda ()
+            (load-theme 'solarized-light)))
