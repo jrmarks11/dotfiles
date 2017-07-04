@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'jmarks/vim-settings'
 
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'crusoexia/vim-dracula'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -21,7 +22,7 @@ call plug#end()
 let g:surround_{char2nr('-')} = "<% \r %>"
 let g:surround_{char2nr('=')} = "<%= \r %>"
 
-colors molokai
+colorscheme dracula
 highlight LineNr guifg=#cccccc
 
 " Remove extra newlines and trailng whitspace when saving

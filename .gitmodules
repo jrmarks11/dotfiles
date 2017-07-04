@@ -43,3 +43,6 @@
 [submodule "vim/.vim/plugged/vim-settings"]
 	path = vim/.vim/plugged/vim-settings
 	url = git@github.com:jrmarks11/vim-settings.git
+[submodule "vim/.vim/plugged/vim-dracula"]
+	path = vim/.vim/plugged/vim-dracula
+	url = https://github.com/crusoexia/vim-dracula.git
