@@ -32,7 +32,7 @@ if [[ $(command -v fasd) ]]; then
   alias j='fasd_cd -d'
   alias jj='fasd_cd -d -i'
   alias v='f -e vim'
-  alias e='f -e emacs'
+  alias e='f -e emacsclient -t'
   vv() {
     local files
     files=$(grep '^>' ~/.viminfo | cut -c3- |
@@ -45,7 +45,7 @@ if [[ $(command -v fasd) ]]; then
     files=$(grep '^>' ~/.viminfo | cut -c3- |
             while read line; do
               [ -f "${line/\~/$HOME}" ] && echo "$line"
-            done | fzf-tmux -d -m -q "$*" -1) && emacs ${files//\~/$HOME}
+            done | fzf-tmux -d -m -q "$*" -1) && ec ${files//\~/$HOME}
   }
 fi
 
