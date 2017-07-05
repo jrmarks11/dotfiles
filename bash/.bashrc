@@ -115,6 +115,7 @@ export EDITOR="$VISUAL"
 
 #functions
 cl() { history -p '!!'|tr -d \\n|pbcopy; }
+tssh() { tmate display -p '#{tmate_ssh}' | pbcopy; }
 
 #shortcuts for bundle
 alias be='bundle exec'
