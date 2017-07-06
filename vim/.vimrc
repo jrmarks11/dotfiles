@@ -36,30 +36,46 @@ endif
 inoremap <C-U> <C-G>u<C-U>
 nmap Y y$
 nmap K i<CR><ESC>
-nnoremap - :bd<CR>
-nmap <LEADER>w :w<CR>
-nmap <LEADER>r :Gblame<CR>
-nmap <LEADER>fr :History<CR>
+
 nmap <LEADER>; :History:<CR>
 nmap <LEADER>/ :History/<CR>
 nmap <LEADER>t :FZF<CR>
-nmap <LEADER>pf :GFiles<CR>
-nmap <LEADER>gs :GFiles?<CR>
-nmap <LEADER>f :Find<SPACE>
+nmap <LEADER>pf :GFiles<CR> nmap <LEADER>f :Find<SPACE>
 nmap <LEADER>s :Runspecfile<CR>
 nmap <LEADER>l :Runspecline<CR>
 nmap <LEADER>. @@
-nmap <LEADER>b :Buffer<CR>
+
+"git
+nmap <LEADER>gb :Gblame<CR>
+
+" buffer shenanigans
+nmap <LEADER><TAB> :b#<CR>
+nmap <LEADER>bb :Buffer<CR>
+nmap <LEADER>bd :bd<CR>
+nmap <LEADER>bn :bn<CR>
+nmap <LEADER>bp :bp<CR>
+
+" file maps
+nmap <LEADER>fed :edit $MYVIMRC<CR>
+nmap <LEADER>feR :source $MYVIMRC<CR>
+nmap <LEADER>fr :History<CR>
+nmap <LEADER>fs :w<CR>
+nmap <LEADER>fS :wa<CR>
 
 " window navigation
-map <LEADER>wj <C-w>j
-map <LEADER>wk <C-w>k
-map <LEADER>wh <C-w>h
-map <LEADER>wl <C-w>l
-map <LEADER>w/ <C-w>v
-map <LEADER>w- <C-w>s
-map <LEADER>wd <C-w>q
-map <LEADER>ww <C-w>w
+nmap <LEADER>w- <C-w>s
+nmap <LEADER>w/ <C-w>v
+nmap <LEADER>wd <C-w>q
+nmap <LEADER>wD <C-w>Q
+nmap <LEADER>wh <C-w>h
+nmap <LEADER>wH <C-w>H
+nmap <LEADER>wj <C-w>j
+nmap <LEADER>wJ <C-w>J
+nmap <LEADER>wk <C-w>k
+nmap <LEADER>wK <C-w>K
+nmap <LEADER>wl <C-w>l
+nmap <LEADER>wL <C-w>L
+nmap <LEADER>ww <C-w>w
 
 function Rspec_line()
   execute ":wa"
