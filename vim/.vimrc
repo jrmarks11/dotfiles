@@ -33,6 +33,7 @@ if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
 
+" Store ctrl u deletes in the undo register
 inoremap <C-U> <C-G>u<C-U>
 nmap Y y$
 nmap K i<CR><ESC>
@@ -40,24 +41,24 @@ nmap K i<CR><ESC>
 nmap <LEADER>; :History:<CR>
 nmap <LEADER>/ :History/<CR>
 nmap <LEADER>t :FZF<CR>
-nmap <LEADER>pf :GFiles<CR> nmap <LEADER>f :Find<SPACE>
+nmap <LEADER>pf :GFiles<CR>
+nmap <LEADER>f :Find<SPACE>
 nmap <LEADER>s :Runspecfile<CR>
 nmap <LEADER>l :Runspecline<CR>
 nmap <LEADER>. @@
 
-"git
+" git
 nmap <LEADER>gb :Gblame<CR>
+nmap <LEADER>gs :GFiles?<CR>
 
 " buffer shenanigans
 nmap <LEADER><TAB> :b#<CR>
-nmap <LEADER>bb :Buffer<CR>
+nmap <LEADER>b :Buffer<CR>
 nmap <LEADER>bd :bd<CR>
 nmap <LEADER>bn :bn<CR>
 nmap <LEADER>bp :bp<CR>
 
 " file maps
-nmap <LEADER>fed :edit $MYVIMRC<CR>
-nmap <LEADER>feR :source $MYVIMRC<CR>
 nmap <LEADER>fr :History<CR>
 nmap <LEADER>fs :w<CR>
 nmap <LEADER>fS :wa<CR>
