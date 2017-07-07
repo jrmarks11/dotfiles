@@ -38,27 +38,61 @@ inoremap <C-U> <C-G>u<C-U>
 nmap Y y$
 nmap K i<CR><ESC>
 
+" expirmental good leader keys
+nmap <LEADER>a :!echo a<CR>
+nmap <LEADER>c :Color<CR>
+nmap <LEADER>d :!echo d<CR>
+nmap <LEADER>e :Lex<CR>
+nmap <LEADER>g :grep
+nmap <LEADER>h <<
+vmap <LEADER>h <gv
+nmap <LEADER>i :!echo i<CR>
+nmap <LEADER>j ]e
+vmap <LEADER>j ]egv
+nmap <LEADER>k [e
+vmap <LEADER>k [egv
+nmap <LEADER>l >>
+vmap <LEADER>l >gv
+nmap <LEADER>m :!echo m<CR>
+nmap <LEADER>n :!echo n<CR>
+nmap <LEADER>o :!echo o<CR>
+nmap <LEADER>p :!echo p<CR>
+nmap <LEADER>q :q<CR>
+nnoremap <LEADER>r :%s/
+xnoremap <LEADER>r :s/
+nmap <LEADER>t :!echo t<CR>
+nmap <LEADER>u :!echo u<CR>
+nmap <LEADER>v `[v`]
+nmap <LEADER>w :w<CR>
+nmap <LEADER>x :!echo x<CR>
+nmap <LEADER>y :!echo y<CR>
+nmap <LEADER>z ZZ<CR>
+nmap <LEADER>, :!echo ,<CR>
 nmap <LEADER>; :History:<CR>
 nmap <LEADER>/ :History/<CR>
-nmap <LEADER>t :FZF<CR>
 nmap <LEADER>pf :GFiles<CR>
-nmap <LEADER>f :Find<SPACE>
-nmap <LEADER>s :Runspecfile<CR>
-nmap <LEADER>l :Runspecline<CR>
 nmap <LEADER>. @@
 
 " git
 nmap <LEADER>gb :Gblame<CR>
 nmap <LEADER>gs :GFiles?<CR>
 
-" buffer shenanigans
+" specs
+nmap <LEADER>s :Runspecfile<CR>
+nmap <LEADER>sc :Rspeccb<CR>
+nmap <LEADER>sl :Runspecline<CR>
+nmap <LEADER>slc :Rspeclinecb<CR>
+
+" buffers
 nmap <LEADER><TAB> :b#<CR>
 nmap <LEADER>b :Buffer<CR>
 nmap <LEADER>bd :bd<CR>
 nmap <LEADER>bn :bn<CR>
 nmap <LEADER>bp :bp<CR>
 
-" file maps
+" files
+nmap <LEADER>f :FZF<CR>
+nmap <LEADER>fg :Find<SPACE>
 nmap <LEADER>fr :History<CR>
 nmap <LEADER>fs :w<CR>
 nmap <LEADER>fS :wa<CR>
@@ -77,19 +111,31 @@ nmap <LEADER>wK <C-w>K
 nmap <LEADER>wl <C-w>l
 nmap <LEADER>wL <C-w>L
 nmap <LEADER>ww <C-w>w
+nmap <LEADER>wo <C-w>o
+
+function Rspec_line_cb()
+  execute ":wa"
+  execute ":let @* = \"" . "bundle exec rspec " . bufname("%") . ':' . line(".") . " --format d\""
+endfunction
+command Rspeclinecb call Rspec_line_cb()
 
 function Rspec_line()
   execute ":wa"
   execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".") . " --format d"
 endfunction
+command Runspecline call Rspec_line()
 
 function Rspec_file()
   execute ":wa"
   execute "!" . "bundle exec rspec " . bufname("%") . " --format d"
 endfunction
-
-command Runspecline call Rspec_line()
 command Runspecfile call Rspec_file()
+
+function Rspec_cb()
+  execute ":wa"
+  execute ":let @* = \"" . "bundle exec rspec " . bufname("%") . " --format d\""
+endfunction
+command Rspeccb call Rspec_cb()
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
