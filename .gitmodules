@@ -46,3 +46,24 @@
 [submodule "vim/.vim/plugged/vim-dracula"]
 	path = vim/.vim/plugged/vim-dracula
 	url = https://github.com/crusoexia/vim-dracula.git
+[submodule "vim/.vim/plugged/vim-textobj-user"]
+	path = vim/.vim/plugged/vim-textobj-user
+	url = git@github.com:kana/vim-textobj-user.git
+[submodule "vim/.vim/plugged/vim-textobj-indent"]
+	path = vim/.vim/plugged/vim-textobj-indent
+	url = git@github.com:kana/vim-textobj-indent.git
+[submodule "vim/.vim/plugged/vim-textobj-line"]
+	path = vim/.vim/plugged/vim-textobj-line
+	url = git@github.com:kana/vim-textobj-line.git
+[submodule "vim/.vim/plugged/vim-textobj-rubyblock"]
+	path = vim/.vim/plugged/vim-textobj-rubyblock
+	url = git@github.com:nelstrom/vim-textobj-rubyblock.git
+[submodule "vim/.vim/plugged/vim-textobj-variable-segment"]
+	path = vim/.vim/plugged/vim-textobj-variable-segment
+	url = git@github.com:Julian/vim-textobj-variable-segment.git
+[submodule "vim/.vim/plugged/vim-angry"]
+	path = vim/.vim/plugged/vim-angry
+	url = git@github.com:b4winckler/vim-angry.git
+[submodule "vim/.vim/plugged/vim-visual-star-search"]
+	path = vim/.vim/plugged/vim-visual-star-search
+	url = git@github.com:nelstrom/vim-visual-star-search.git
