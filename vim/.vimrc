@@ -26,9 +26,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'elixir-lang/vim-elixir'
 call plug#end()
 
-let g:surround_{char2nr('-')} = "<% \r %>"
-let g:surround_{char2nr('=')} = "<%= \r %>"
-
 colorscheme dracula
 highlight LineNr guifg=#cccccc
 
@@ -37,26 +34,27 @@ autocmd BufWritePre * : %s/\n\n\n\+//e | %s/\s\+$//e
 
 " Use <C-L> to clear the highlighting of :set hlsearch.
 if maparg('<C-L>', 'n') ==# ''
-  nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+  nnoremap <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
 
 " Store ctrl u deletes in the undo register
 inoremap <C-U> <C-G>u<C-U>
+
 nmap Y y$
 nmap K i<CR><ESC>
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
 
-" expirmental good leader keys
-nmap <LEADER>a :!echo a<CR>
+" experimental leader keys
+nmap <LEADER>a :args<CR>
 nmap <LEADER>c :Color<CR>
-nmap <LEADER>d :!echo d<CR>
+nmap <LEADER>d "_d
 nmap <LEADER>i :!echo i<CR>
-nmap <LEADER>m :!echo m<CR>
+nmap <LEADER>m  `m
 nmap <LEADER>n :!echo n<CR>
 nmap <LEADER>o :!echo o<CR>
-nmap <LEADER>p :!echo p<CR>
+nmap <LEADER>p "0p
 nmap <LEADER>q :q<CR>
-nnoremap <LEADER>r :%s/
-xnoremap <LEADER>r :s/
 nmap <LEADER>t :!echo t<CR>
 nmap <LEADER>u :!echo u<CR>
 nmap <LEADER>w :w<CR>
@@ -88,6 +86,7 @@ nmap <LEADER>bp :bp<CR>
 " files
 cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
 nmap <LEADER>e :Lex<CR>
+nmap <LEADER>ef :Sex<CR>
 nmap <LEADER>ew :e %%
 nmap <LEADER>es :sp %%
 nmap <LEADER>ev :vsp %%
@@ -98,6 +97,9 @@ nmap <LEADER>fs :w<CR>
 nmap <LEADER>fS :wa<CR>
 nmap <LEADER>g :grep
 nmap <LEADER>pf :GFiles<CR>
+nnoremap <LEADER>r :%s/
+nnoremap <Leader>rw :%s/\<<C-R><C-W>\>//gc<Left><Left><Left>
+xnoremap <LEADER>r :s/
 
 " window navigation
 nmap <LEADER>w- <C-w>s
@@ -128,13 +130,15 @@ nmap <LEADER>v `[v`]
 
 function Rspec_line_cb()
   execute ":wa"
-  execute ":let @* = \"" . "bundle exec rspec " . bufname("%") . ':' . line(".") . " --format d\""
+  execute ":let @* = \"" . "bundle exec rspec " . bufname("%") . ':'
+        \ . line(".") . " --format d\""
 endfunction
 command Rspeclinecb call Rspec_line_cb()
 
 function Rspec_line()
   execute ":wa"
-  execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".") . " --format d"
+  execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".")
+        \ . " --format d"
 endfunction
 command Runspecline call Rspec_line()
 
@@ -146,17 +150,32 @@ command Runspecfile call Rspec_file()
 
 function Rspec_cb()
   execute ":wa"
-  execute ":let @* = \"" . "bundle exec rspec " . bufname("%") . " --format d\""
+  execute ":let @* = \"" . "bundle exec rspec " . bufname("%")
+        \ . " --format d\""
 endfunction
 command Rspeccb call Rspec_cb()
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+" b is a ruby block instead of (
 let g:textobj_rubyblock_no_default_key_mappings = 1
 	xmap ab  <Plug>(textobj-rubyblock-a)
 	omap ab  <Plug>(textobj-rubyblock-a)
 	xmap ib  <Plug>(textobj-rubyblock-i)
 	omap ib  <Plug>(textobj-rubyblock-i)
 
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+" Find in project
+command! -bang -nargs=* Find call
+      \ fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings
+      \ --ignore-case --hidden --follow --glob "!.git/*" --color "always" '
+      \ .shellescape(<q-args>), 1, <bang>0)
+
+" Insert mode completion
+imap <C-X><C-K> <Plug>(fzf-complete-word)
+imap <C-X><C-F> <Plug>(fzf-complete-path)
+imap <C-X><C-J> <Plug>(fzf-complete-file-ag)
+imap <C-X><C-L> <Plug>(fzf-complete-line)
+
+let g:surround_{char2nr('-')} = "<% \r %>"
+let g:surround_{char2nr('=')} = "<%= \r %>"
