@@ -67,3 +67,6 @@
 [submodule "vim/.vim/plugged/vim-visual-star-search"]
 	path = vim/.vim/plugged/vim-visual-star-search
 	url = git@github.com:nelstrom/vim-visual-star-search.git
+[submodule "vim/.vim/plugged/vim-rsi"]
+	path = vim/.vim/plugged/vim-rsi
+	url = git@github.com:tpope/vim-rsi.git
