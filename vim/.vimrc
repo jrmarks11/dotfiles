@@ -47,7 +47,7 @@ nmap K i<CR><ESC>
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 
-" experimental leader keys
+" good leader keys that are open
 nmap <LEADER>a :!echo a<CR>
 nmap <LEADER>i :!echo i<CR>
 nmap <LEADER>n :!echo n<CR>
@@ -71,9 +71,10 @@ nmap <LEADER>. @@
 " git
 nmap <LEADER>gb :Gblame<CR>
 nmap <LEADER>gs :GFiles?<CR>
+nmap <LEADER>gg :Ggrep<SPACE>
 
 " specs
-nmap <LEADER>ss:Runspecfile<CR>
+nmap <LEADER>ss :Runspecfile<CR>
 nmap <LEADER>sc :Rspeccb<CR>
 nmap <LEADER>sl :Runspecline<CR>
 nmap <LEADER>slc :Rspeclinecb<CR>
