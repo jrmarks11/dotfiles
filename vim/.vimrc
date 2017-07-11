@@ -92,7 +92,7 @@ nmap <LEADER>ef :Vex<CR>
 nmap <LEADER>ew :e %%
 nmap <LEADER>es :sp %%
 nmap <LEADER>ev :vsp %%
-nmap <LEADER>ff :Find<SPACE>
+nmap <LEADER>ff :FzfVimGrep<SPACE>
 nmap <LEADER>fg :grep<SPACE>
 nmap <LEADER>fr :History<CR>
 nmap <LEADER>fs :w<CR>
@@ -161,13 +161,13 @@ nmap ga <Plug>(EasyAlign)
 
 " b is a ruby block instead of (
 let g:textobj_rubyblock_no_default_key_mappings = 1
-	xmap ab  <Plug>(textobj-rubyblock-a)
-	omap ab  <Plug>(textobj-rubyblock-a)
-	xmap ib  <Plug>(textobj-rubyblock-i)
-	omap ib  <Plug>(textobj-rubyblock-i)
+xmap ab  <Plug>(textobj-rubyblock-a)
+omap ab  <Plug>(textobj-rubyblock-a)
+xmap ib  <Plug>(textobj-rubyblock-i)
+omap ib  <Plug>(textobj-rubyblock-i)
 
-" Find in project
-command! -bang -nargs=* Find call
+" find in project with fzf
+command! -bang -nargs=* FzfVimGrep call
       \ fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings
       \ --ignore-case --hidden --follow --glob "!.git/*" --color "always" '
       \ .shellescape(<q-args>), 1, <bang>0)
