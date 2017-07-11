@@ -92,11 +92,11 @@ nmap <LEADER>ew :e %%
 nmap <LEADER>es :sp %%
 nmap <LEADER>ev :vsp %%
 nmap <LEADER>f :FZF<CR>
-nmap <LEADER>fg :Find<SPACE>
+nmap <LEADER>fg :grep<SPACE>
 nmap <LEADER>fr :History<CR>
 nmap <LEADER>fs :w<CR>
 nmap <LEADER>fS :wa<CR>
-nmap <LEADER>g :grep
+nmap <LEADER>g  :Find<SPACE>
 nmap <LEADER>pf :GFiles<CR>
 nnoremap <LEADER>r :%s/
 nnoremap <Leader>rw :%s/\<<C-R><C-W>\>//gc<Left><Left><Left>
