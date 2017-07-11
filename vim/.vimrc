@@ -6,13 +6,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'andrewradev/splitjoin.vim'
   Plug 'b4winckler/vim-angry'
   Plug 'crusoexia/vim-dracula'
+  Plug 'elixir-lang/vim-elixir'
   Plug 'junegunn/fzf', { 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/vim-easy-align'
   Plug 'julian/vim-textobj-variable-segment'
-  Plug 'kana/vim-textobj-user'
   Plug 'kana/vim-textobj-indent'
   Plug 'kana/vim-textobj-line'
+  Plug 'kana/vim-textobj-user'
   Plug 'nelstrom/vim-textobj-rubyblock'
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'tomasr/molokai'
@@ -24,7 +25,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rsi'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
-  Plug 'elixir-lang/vim-elixir'
 call plug#end()
 
 colorscheme dracula
@@ -38,8 +38,9 @@ if maparg('<C-L>', 'n') ==# ''
   nnoremap <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 endif
 
-" Store ctrl u deletes in the undo register
+" Store ctrl u and w store in the undo register
 inoremap <C-U> <C-G>u<C-U>
+inoremap <C-W> <C-G>u<C-W>
 
 nmap Y y$
 nmap K i<CR><ESC>
@@ -47,22 +48,22 @@ nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 
 " experimental leader keys
-nmap <LEADER>a :args<CR>
-nmap <LEADER>c :Color<CR>
-nmap <LEADER>d "_d
+nmap <LEADER>a :!echo a<CR>
 nmap <LEADER>i :!echo i<CR>
-nmap <LEADER>m  `m
 nmap <LEADER>n :!echo n<CR>
 nmap <LEADER>o :!echo o<CR>
-nmap <LEADER>p "0p
-nmap <LEADER>q :q<CR>
 nmap <LEADER>t :!echo t<CR>
 nmap <LEADER>u :!echo u<CR>
-nmap <LEADER>w :w<CR>
-nmap <LEADER>x :!echo x<CR>
 nmap <LEADER>y :!echo y<CR>
-nmap <LEADER>z ZZ<CR>
 nmap <LEADER>, :!echo ,<CR>
+
+" commands
+nmap <LEADER>c :Color<CR>
+nmap <LEADER>q :q<CR>
+nnoremap <LEADER>r :%s/
+xnoremap <LEADER>r :s/
+nmap <LEADER>w :w<CR>
+nmap <LEADER>z ZZ<CR>
 nmap <LEADER>; :History:<CR>
 nmap <LEADER>/ :History/<CR>
 nmap <LEADER>. @@
@@ -72,7 +73,7 @@ nmap <LEADER>gb :Gblame<CR>
 nmap <LEADER>gs :GFiles?<CR>
 
 " specs
-nmap <LEADER>s :Runspecfile<CR>
+nmap <LEADER>ss:Runspecfile<CR>
 nmap <LEADER>sc :Rspeccb<CR>
 nmap <LEADER>sl :Runspecline<CR>
 nmap <LEADER>slc :Rspeclinecb<CR>
@@ -80,29 +81,24 @@ nmap <LEADER>slc :Rspeclinecb<CR>
 " buffers
 nmap <LEADER><TAB> :b#<CR>
 nmap <LEADER>b :Buffer<CR>
-nmap <LEADER>bd :bd<CR>
-nmap <LEADER>bn :bn<CR>
-nmap <LEADER>bp :bp<CR>
+nmap <LEADER>x :bd<CR>
 
 " files
 cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
-nmap <LEADER>e :Lex<CR>
-nmap <LEADER>ef :Sex<CR>
+nmap <LEADER>t :FZF<CR>
+nmap <LEADER>ee :Lex<CR>
+nmap <LEADER>ef :Vex<CR>
 nmap <LEADER>ew :e %%
 nmap <LEADER>es :sp %%
 nmap <LEADER>ev :vsp %%
-nmap <LEADER>f :FZF<CR>
+nmap <LEADER>ff :Find<SPACE>
 nmap <LEADER>fg :grep<SPACE>
 nmap <LEADER>fr :History<CR>
 nmap <LEADER>fs :w<CR>
 nmap <LEADER>fS :wa<CR>
-nmap <LEADER>g  :Find<SPACE>
 nmap <LEADER>pf :GFiles<CR>
-nnoremap <LEADER>r :%s/
-nnoremap <Leader>rw :%s/\<<C-R><C-W>\>//gc<Left><Left><Left>
-xnoremap <LEADER>r :s/
 
-" window navigation
+" window
 nmap <LEADER>w- <C-w>s
 nmap <LEADER>w/ <C-w>v
 nmap <LEADER>wd <C-w>q
@@ -118,7 +114,8 @@ nmap <LEADER>wL <C-w>L
 nmap <LEADER>ww <C-w>w
 nmap <LEADER>wo <C-w>o
 
-" text navigation
+" text
+nmap <LEADER>d "_d
 nmap <LEADER>h <<
 vmap <LEADER>h <gv
 nmap <LEADER>j ]e
@@ -127,6 +124,8 @@ nmap <LEADER>k [e
 vmap <LEADER>k [egv
 nmap <LEADER>l >>
 vmap <LEADER>l >gv
+nmap <LEADER>m  `m
+nmap <LEADER>p "0p
 nmap <LEADER>v `[v`]
 
 function Rspec_line_cb()
