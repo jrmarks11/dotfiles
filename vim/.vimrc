@@ -42,8 +42,11 @@ endif
 inoremap <C-U> <C-G>u<C-U>
 inoremap <C-W> <C-G>u<C-W>
 
-nmap Y y$
-nmap K i<CR><ESC>
+" Ctrl-K deletes to end of line
+inoremap <C-K> <C-O>d$
+
+nmap     Y y$
+nmap     K i<CR><ESC>
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 
@@ -58,15 +61,15 @@ nmap <LEADER>y :!echo y<CR>
 nmap <LEADER>, :!echo ,<CR>
 
 " commands
-nmap <LEADER>c :Color<CR>
-nmap <LEADER>q :q<CR>
+nmap     <LEADER>c :Color<CR>
+nmap     <LEADER>q :q<CR>
 nnoremap <LEADER>r :%s/
 xnoremap <LEADER>r :s/
-nmap <LEADER>w :w<CR>
-nmap <LEADER>z ZZ<CR>
-nmap <LEADER>; :History:<CR>
-nmap <LEADER>/ :History/<CR>
-nmap <LEADER>. @@
+nmap     <LEADER>w :w<CR>
+nmap     <LEADER>z ZZ<CR>
+nmap     <LEADER>; :History:<CR>
+nmap     <LEADER>/ :History/<CR>
+nmap     <LEADER>. @@
 
 " git
 nmap <LEADER>gb :Gblame<CR>
@@ -77,16 +80,16 @@ nmap <LEADER>gg :Ggrep<SPACE>
 nmap <LEADER>ss :Runspecfile<CR>
 nmap <LEADER>sc :Rspeccb<CR>
 nmap <LEADER>sl :Runspecline<CR>
-nmap <LEADER>slc :Rspeclinecb<CR>
+nmap <LEADER>sv :Rspeclinecb<CR>
 
 " buffers
 nmap <LEADER><TAB> :b#<CR>
-nmap <LEADER>b :Buffer<CR>
-nmap <LEADER>x :bd<CR>
+nmap <LEADER>b     :Buffer<CR>
+nmap <LEADER>x     :bd<CR>
 
 " files
 cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
-nmap <LEADER>t :FZF<CR>
+nmap <LEADER>t  :FZF<CR>
 nmap <LEADER>ee :Lex<CR>
 nmap <LEADER>ef :Vex<CR>
 nmap <LEADER>ew :e %%
@@ -161,10 +164,10 @@ nmap ga <Plug>(EasyAlign)
 
 " b is a ruby block instead of (
 let g:textobj_rubyblock_no_default_key_mappings = 1
-xmap ab  <Plug>(textobj-rubyblock-a)
-omap ab  <Plug>(textobj-rubyblock-a)
-xmap ib  <Plug>(textobj-rubyblock-i)
-omap ib  <Plug>(textobj-rubyblock-i)
+xmap ab <Plug>(textobj-rubyblock-a)
+omap ab <Plug>(textobj-rubyblock-a)
+xmap ib <Plug>(textobj-rubyblock-i)
+omap ib <Plug>(textobj-rubyblock-i)
 
 " find in project with fzf
 command! -bang -nargs=* FzfVimGrep call
