@@ -177,6 +177,3 @@ imap <C-X><C-K> <Plug>(fzf-complete-word)
 imap <C-X><C-F> <Plug>(fzf-complete-path)
 imap <C-X><C-J> <Plug>(fzf-complete-file-ag)
 imap <C-X><C-L> <Plug>(fzf-complete-line)
-
-let g:surround_{char2nr('-')} = "<% \r %>"
-let g:surround_{char2nr('=')} = "<%= \r %>"
