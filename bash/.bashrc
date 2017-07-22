@@ -116,6 +116,7 @@ export EDITOR="$VISUAL"
 #functions
 cl() { history -p '!!'|tr -d \\n|pbcopy; }
 tssh() { tmate display -p '#{tmate_ssh}' | pbcopy; }
+function rgv() { vim $(rg -l "$@"); }
 
 #shortcuts for bundle
 alias be='bundle exec'
