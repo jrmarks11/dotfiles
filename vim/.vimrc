@@ -54,6 +54,7 @@ xnoremap & :&&<CR>
 nmap <LEADER>a :!echo a<CR>
 nmap <LEADER>i :!echo i<CR>
 nmap <LEADER>n :!echo n<CR>
+nmap <LEADER>m :!echo n<CR>
 nmap <LEADER>o :!echo o<CR>
 nmap <LEADER>t :!echo t<CR>
 nmap <LEADER>u :!echo u<CR>
@@ -65,7 +66,6 @@ nmap     <LEADER>c :Color<CR>
 nmap     <LEADER>q :q<CR>
 nnoremap <LEADER>r :%s/
 xnoremap <LEADER>r :s/
-nmap     <LEADER>w :w<CR>
 nmap     <LEADER>z ZZ<CR>
 nmap     <LEADER>; :History:<CR>
 nmap     <LEADER>/ :History/<CR>
@@ -93,8 +93,6 @@ nmap <LEADER>t  :FZF<CR>
 nmap <LEADER>ee :Lex<CR>
 nmap <LEADER>ef :Vex<CR>
 nmap <LEADER>ew :e %%
-nmap <LEADER>es :sp %%
-nmap <LEADER>ev :vsp %%
 nmap <LEADER>ff :FzfVimGrep<SPACE>
 nmap <LEADER>fg :grep<SPACE>
 nmap <LEADER>fr :History<CR>
@@ -128,7 +126,6 @@ nmap <LEADER>k [e
 vmap <LEADER>k [egv
 nmap <LEADER>l >>
 vmap <LEADER>l >gv
-nmap <LEADER>m  `m
 nmap <LEADER>p "0p
 nmap <LEADER>v `[v`]
 
@@ -174,8 +171,3 @@ command! -bang -nargs=* FzfVimGrep call
       \ fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings
       \ --ignore-case --hidden --follow --glob "!.git/*" --color "always" '
       \ .shellescape(<q-args>), 1, <bang>0)
-
-" Insert mode completion
-imap <C-X><C-K> <Plug>(fzf-complete-word)
-imap <C-X><C-F> <Plug>(fzf-complete-path)
-imap <C-X><C-J> <Plug>(fzf-complete-file-ag)
