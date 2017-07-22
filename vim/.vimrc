@@ -179,4 +179,3 @@ command! -bang -nargs=* FzfVimGrep call
 imap <C-X><C-K> <Plug>(fzf-complete-word)
 imap <C-X><C-F> <Plug>(fzf-complete-path)
 imap <C-X><C-J> <Plug>(fzf-complete-file-ag)
-imap <C-X><C-L> <Plug>(fzf-complete-line)
