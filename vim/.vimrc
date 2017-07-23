@@ -45,31 +45,34 @@ inoremap <C-W> <C-G>u<C-W>
 " Ctrl-K deletes to end of line
 inoremap <C-K> <C-O>d$
 
-nmap     Y y$
-nmap     K i<CR><ESC>
-nnoremap & :&&<CR>
-xnoremap & :&&<CR>
+" Y works like D and C
+nmap Y y$
+
+" K splits lines
+nmap K i<CR><ESC>
+
+" shift tab and tab like c-o and c-i
+nmap <S-TAB> <C-o>
 
 " good leader keys that are open
-nmap <LEADER>a :!echo a<CR>
-nmap <LEADER>i :!echo i<CR>
 nmap <LEADER>n :!echo n<CR>
-nmap <LEADER>m :!echo n<CR>
+nmap <LEADER>m :!echo m<CR>
 nmap <LEADER>o :!echo o<CR>
+nmap <LEADER>q :!echo q<CR>
+nmap <LEADER>r :!echo r<CR>
 nmap <LEADER>t :!echo t<CR>
 nmap <LEADER>u :!echo u<CR>
 nmap <LEADER>y :!echo y<CR>
 nmap <LEADER>, :!echo ,<CR>
 
-" commands
-nmap     <LEADER>c :Color<CR>
-nmap     <LEADER>q :q<CR>
-nnoremap <LEADER>r :%s/
-xnoremap <LEADER>r :s/
-nmap     <LEADER>z ZZ<CR>
-nmap     <LEADER>; :History:<CR>
-nmap     <LEADER>/ :History/<CR>
-nmap     <LEADER>. @@
+" command shortcuts
+nmap <LEADER>a :Lines<CR>
+nmap <LEADER>c :Color<CR>
+nmap <LEADER>i :BLines<CR>
+nmap <LEADER>z ZZ<CR>
+nmap <LEADER>; :History:<CR>
+nmap <LEADER>/ :History/<CR>
+nmap <LEADER>. @@
 
 " git
 nmap <LEADER>gb :Gblame<CR>
@@ -88,19 +91,14 @@ nmap <LEADER>b     :Buffer<CR>
 nmap <LEADER>x     :bd<CR>
 
 " files
-cnoremap <expr> %%  getcmdtype() == ':' ? fnameescape(expand('%:h')).'/' : '%%'
-nmap <LEADER>t  :FZF<CR>
-nmap <LEADER>ee :Lex<CR>
-nmap <LEADER>ef :Vex<CR>
-nmap <LEADER>ew :e %%
+nmap <LEADER>t  :GFiles<CR>
+nmap <LEADER>e  :Lex<CR>
+nmap <LEADER>v  :Vex<CR>
 nmap <LEADER>ff :FzfVimGrep<SPACE>
 nmap <LEADER>fg :grep<SPACE>
 nmap <LEADER>fr :History<CR>
-nmap <LEADER>fs :w<CR>
-nmap <LEADER>fS :wa<CR>
-nmap <LEADER>pf :GFiles<CR>
 
-" window
+" window nav
 nmap <LEADER>w- <C-w>s
 nmap <LEADER>w/ <C-w>v
 nmap <LEADER>wd <C-w>q
@@ -127,7 +125,6 @@ vmap <LEADER>k [egv
 nmap <LEADER>l >>
 vmap <LEADER>l >gv
 nmap <LEADER>p "0p
-nmap <LEADER>v `[v`]
 
 function Rspec_line_cb()
   execute ":wa"
