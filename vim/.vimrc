@@ -62,7 +62,7 @@ nmap <LEADER>n }jzt
 nmap <LEADER>N 2{jzt
 nmap <LEADER>m }jzz
 nmap <LEADER>M 2{jzz
-nmap <LEADER>o :!echo o<CR>
+nmap <LEADER>o :Goyo<CR>
 nmap <LEADER>q :!echo q<CR>
 nmap <LEADER>r :!echo r<CR>
 nmap <LEADER>t :!echo t<CR>
@@ -163,3 +163,6 @@ command! -bang -nargs=* FzfVimGrep call
       \ fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings
       \ --ignore-case --hidden --follow --glob "!.git/*" --color "always" '
       \ .shellescape(<q-args>), 1, <bang>0)
+
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
