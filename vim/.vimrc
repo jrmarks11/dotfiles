@@ -7,8 +7,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'b4winckler/vim-angry'
   Plug 'crusoexia/vim-dracula'
   Plug 'elixir-lang/vim-elixir'
+  Plug 'jonathanfilip/vim-lucius'
   Plug 'junegunn/fzf', { 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/goyo.vim'
+  Plug 'junegunn/limelight.vim'
   Plug 'junegunn/vim-easy-align'
   Plug 'julian/vim-textobj-variable-segment'
   Plug 'kana/vim-textobj-indent'

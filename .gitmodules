@@ -70,3 +70,12 @@
 [submodule "vim/.vim/plugged/vim-rsi"]
 	path = vim/.vim/plugged/vim-rsi
 	url = git@github.com:tpope/vim-rsi.git
+[submodule "vim/.vim/plugged/goyo.vim"]
+	path = vim/.vim/plugged/goyo.vim
+	url = git@github.com:junegunn/goyo.vim.git
+[submodule "vim/.vim/plugged/limelight.vim"]
+	path = vim/.vim/plugged/limelight.vim
+	url = git@github.com:junegunn/limelight.vim.git
+[submodule "vim/.vim/plugged/vim-lucius"]
+	path = vim/.vim/plugged/vim-lucius
+	url = git@github.com:jonathanfilip/vim-lucius.git
