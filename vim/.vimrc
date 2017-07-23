@@ -58,8 +58,10 @@ nmap K i<CR><ESC>
 nmap <S-TAB> <C-o>
 
 " good leader keys that are open
-nmap <LEADER>n :!echo n<CR>
-nmap <LEADER>m :!echo m<CR>
+nmap <LEADER>n }jzt
+nmap <LEADER>N 2{jzt
+nmap <LEADER>m }jzz
+nmap <LEADER>M 2{jzz
 nmap <LEADER>o :!echo o<CR>
 nmap <LEADER>q :!echo q<CR>
 nmap <LEADER>r :!echo r<CR>
