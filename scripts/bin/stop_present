@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd ~/vim-present
+stow -D vim
+cd ~/dotfiles
+stow vim
