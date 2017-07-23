@@ -99,20 +99,10 @@ nmap <LEADER>fg :grep<SPACE>
 nmap <LEADER>fr :History<CR>
 
 " window nav
+nmap <LEADER>w  <C-w>
 nmap <LEADER>w- <C-w>s
 nmap <LEADER>w/ <C-w>v
 nmap <LEADER>wd <C-w>q
-nmap <LEADER>wD <C-w>Q
-nmap <LEADER>wh <C-w>h
-nmap <LEADER>wH <C-w>H
-nmap <LEADER>wj <C-w>j
-nmap <LEADER>wJ <C-w>J
-nmap <LEADER>wk <C-w>k
-nmap <LEADER>wK <C-w>K
-nmap <LEADER>wl <C-w>l
-nmap <LEADER>wL <C-w>L
-nmap <LEADER>ww <C-w>w
-nmap <LEADER>wo <C-w>o
 
 " text
 nmap <LEADER>d "_d
