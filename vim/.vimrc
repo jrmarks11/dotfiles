@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'kana/vim-textobj-indent'
   Plug 'kana/vim-textobj-line'
   Plug 'kana/vim-textobj-user'
+  Plug 'ludovicchabant/vim-gutentags.git'
   Plug 'nelstrom/vim-textobj-rubyblock'
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'tomasr/molokai'

@@ -79,3 +79,6 @@
 [submodule "vim/.vim/plugged/vim-lucius"]
 	path = vim/.vim/plugged/vim-lucius
 	url = git@github.com:jonathanfilip/vim-lucius.git
+[submodule "vim/.vim/plugged/vim-gutentags"]
+	path = vim/.vim/plugged/vim-gutentags
+	url = git@github.com:ludovicchabant/vim-gutentags.git
