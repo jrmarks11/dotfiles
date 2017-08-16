@@ -66,7 +66,6 @@ nmap <LEADER>M 2{jzz
 nmap <LEADER>o :Goyo<CR>
 nmap <LEADER>q :!echo q<CR>
 nmap <LEADER>r :!echo r<CR>
-nmap <LEADER>t :!echo t<CR>
 nmap <LEADER>u :!echo u<CR>
 nmap <LEADER>y :!echo y<CR>
 nmap <LEADER>, :!echo ,<CR>
@@ -101,6 +100,8 @@ nmap <LEADER>t  :GFiles<CR>
 nmap <LEADER>e  :Lex<CR>
 nmap <LEADER>v  :Vex<CR>
 nmap <LEADER>ff :FzfVimGrep<SPACE>
+nmap <LEADER>fw :FzfVimGrep<SPACE><C-R>=expand("<cword>")<CR><CR>
+nmap <LEADER>gw :grep<SPACE><C-R>=expand("<cword>")<CR><CR>
 nmap <LEADER>fg :grep<SPACE>
 nmap <LEADER>fr :History<CR>
 
