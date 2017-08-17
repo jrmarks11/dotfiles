@@ -7,7 +7,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'b4winckler/vim-angry'
   Plug 'crusoexia/vim-dracula'
   Plug 'elixir-lang/vim-elixir'
-  Plug 'jonathanfilip/vim-lucius'
   Plug 'junegunn/fzf', { 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/goyo.vim'
@@ -21,7 +20,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'nelstrom/vim-textobj-rubyblock'
   Plug 'nelstrom/vim-visual-star-search'
   Plug 'NLKNguyen/papercolor-theme'
-  Plug 'tomasr/molokai'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
