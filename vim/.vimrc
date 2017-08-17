@@ -20,6 +20,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'ludovicchabant/vim-gutentags.git'
   Plug 'nelstrom/vim-textobj-rubyblock'
   Plug 'nelstrom/vim-visual-star-search'
+  Plug 'NLKNguyen/papercolor-theme'
   Plug 'tomasr/molokai'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
@@ -65,14 +66,14 @@ nmap <LEADER>m }jzz
 nmap <LEADER>M 2{jzz
 nmap <LEADER>o :Goyo<CR>
 nmap <LEADER>q :!echo q<CR>
-nmap <LEADER>r :!echo r<CR>
+nmap <LEADER>r :Colors<CR>
 nmap <LEADER>u :!echo u<CR>
 nmap <LEADER>y :!echo y<CR>
 nmap <LEADER>, :!echo ,<CR>
 
 " command shortcuts
 nmap <LEADER>a :Lines<CR>
-nmap <LEADER>c :Color<CR>
+nmap <LEADER>c :ToggleColor<CR>
 nmap <LEADER>i :BLines<CR>
 nmap <LEADER>z ZZ<CR>
 nmap <LEADER>; :History:<CR>
@@ -122,6 +123,17 @@ vmap <LEADER>k [egv
 nmap <LEADER>l >>
 vmap <LEADER>l >gv
 nmap <LEADER>p "0p
+
+function Toggle_Color()
+  if (&background == 'dark')
+    colorscheme PaperColor
+    set background=light
+  else
+    colorscheme dracula
+    set background=dark
+  endif
+endfunction
+command ToggleColor call Toggle_Color()
 
 function Rspec_line_cb()
   execute ":wa"
