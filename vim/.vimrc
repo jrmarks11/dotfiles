@@ -81,6 +81,7 @@ nmap <LEADER>. @@
 " git
 nmap <LEADER>gb :Gblame<CR>
 nmap <LEADER>gs :GFiles?<CR>
+nmap <LEADER>gt :GFiles<CR>
 nmap <LEADER>gg :Ggrep<SPACE>
 
 " specs
@@ -95,7 +96,7 @@ nmap <LEADER>b     :Buffer<CR>
 nmap <LEADER>x     :bd<CR>
 
 " files
-nmap <LEADER>t  :GFiles<CR>
+nmap <LEADER>t  :Files<CR>
 nmap <LEADER>e  :Lex<CR>
 nmap <LEADER>v  :Vex<CR>
 nmap <LEADER>ff :FzfVimGrep<SPACE>
