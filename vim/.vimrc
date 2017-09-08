@@ -1,8 +1,6 @@
 let mapleader=' '
 
 call plug#begin('~/.vim/plugged')
-  Plug 'jmarks/vim-settings'
-
   Plug 'andrewradev/splitjoin.vim'
   Plug 'b4winckler/vim-angry'
   Plug 'crusoexia/vim-dracula'
@@ -28,10 +26,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-rsi'
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
-call plug#end()
 
-colorscheme dracula
-highlight LineNr guifg=#cccccc
+  Plug 'jmarks/vim-colors'
+  Plug 'jmarks/vim-settings'
+call plug#end()
 
 " Remove extra newlines and trailng whitspace when saving
 autocmd BufWritePre * : %s/\n\n\n\+//e | %s/\s\+$//e
@@ -58,16 +56,26 @@ nmap K i<CR><ESC>
 nmap <S-TAB> <C-o>
 
 " good leader keys that are open
+nmap <LEADER>, :!echo ,<CR>
+nmap <LEADER>d "_d
+nmap <LEADER>h <<
+vmap <LEADER>h <gv
+nmap <LEADER>j ]e
+vmap <LEADER>j ]egv
+nmap <LEADER>k [e
+vmap <LEADER>k [egv
+nmap <LEADER>l >>
+vmap <LEADER>l >gv
 nmap <LEADER>n }jzt
 nmap <LEADER>N 2{jzt
 nmap <LEADER>m }jzz
 nmap <LEADER>M 2{jzz
 nmap <LEADER>o :Goyo<CR>
+nmap <LEADER>p "0p
 nmap <LEADER>q :!echo q<CR>
 nmap <LEADER>r :Colors<CR>
 nmap <LEADER>u :!echo u<CR>
 nmap <LEADER>y :!echo y<CR>
-nmap <LEADER>, :!echo ,<CR>
 
 " command shortcuts
 nmap <LEADER>a :Lines<CR>
@@ -111,31 +119,6 @@ nmap <LEADER>w- <C-w>s
 nmap <LEADER>w/ <C-w>v
 nmap <LEADER>wd <C-w>q
 
-" text
-nmap <LEADER>d "_d
-nmap <LEADER>h <<
-vmap <LEADER>h <gv
-nmap <LEADER>j ]e
-vmap <LEADER>j ]egv
-nmap <LEADER>k [e
-vmap <LEADER>k [egv
-nmap <LEADER>l >>
-vmap <LEADER>l >gv
-nmap <LEADER>p "0p
-
-function Toggle_Color()
-  if (&background == 'dark')
-    " colorscheme PaperColor
-    set background=light
-    MyColorscheme PaperColor
-  else
-    " colorscheme dracula
-    set background=dark
-    MyColorscheme dracula
-  endif
-endfunction
-command ToggleColor call Toggle_Color()
-
 function Rspec_line_cb()
   execute ":wa"
   execute ":let @* = \"" . "bundle exec rspec " . bufname("%") . ':'
@@ -166,13 +149,6 @@ command Rspeccb call Rspec_cb()
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-" b is a ruby block instead of (
-let g:textobj_rubyblock_no_default_key_mappings = 1
-xmap ab <Plug>(textobj-rubyblock-a)
-omap ab <Plug>(textobj-rubyblock-a)
-xmap ib <Plug>(textobj-rubyblock-i)
-omap ib <Plug>(textobj-rubyblock-i)
-
 " find in project with fzf
 command -bang -nargs=* FzfVimGrep call
       \ fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings
@@ -181,93 +157,3 @@ command -bang -nargs=* FzfVimGrep call
 
 autocmd User GoyoEnter Limelight
 autocmd User GoyoLeave Limelight!
-
-if !exists('s:known_links')
-  let s:known_links = {}
-endif
-
-function s:Find_links() " {{{1
-  " Find and remember links between highlighting groups.
-  redir => listing
-  try
-    silent highlight
-  finally
-    redir END
-  endtry
-  for line in split(listing, "\n")
-    let tokens = split(line)
-    " We're looking for lines like "String xxx links to Constant" in the
-    " output of the :highlight command.
-    if len(tokens) == 5 && tokens[1] == 'xxx' && tokens[2] == 'links' && tokens[3] == 'to'
-      let fromgroup = tokens[0]
-      let togroup = tokens[4]
-      let s:known_links[fromgroup] = togroup
-    endif
-  endfor
-endfunction
-
-function s:Restore_links() " {{{1
-  " Restore broken links between highlighting groups.
-  redir => listing
-  try
-    silent highlight
-  finally
-    redir END
-  endtry
-  let num_restored = 0
-  for line in split(listing, "\n")
-    let tokens = split(line)
-    " We're looking for lines like "String xxx cleared" in the
-    " output of the :highlight command.
-    if len(tokens) == 3 && tokens[1] == 'xxx' && tokens[2] == 'cleared'
-      let fromgroup = tokens[0]
-      let togroup = get(s:known_links, fromgroup, '')
-      if !empty(togroup)
-        execute 'hi link' fromgroup togroup
-        let num_restored += 1
-      endif
-    endif
-  endfor
-endfunction
-
-function s:AccurateColorscheme(colo_name)
-  call <SID>Find_links()
-  exec "colorscheme " a:colo_name
-  call <SID>Restore_links()
-endfunction
-
-command -nargs=1 -complete=color MyColorscheme call <SID>AccurateColorscheme(<q-args>)
-
-function s:update_fzf_colors()
-  let rules =
-  \ { 'fg':      [['Normal',       'fg']],
-    \ 'bg':      [['Normal',       'bg']],
-    \ 'hl':      [['Comment',      'fg']],
-    \ 'fg+':     [['CursorColumn', 'fg'], ['Normal', 'fg']],
-    \ 'bg+':     [['CursorColumn', 'bg']],
-    \ 'hl+':     [['Statement',    'fg']],
-    \ 'info':    [['PreProc',      'fg']],
-    \ 'prompt':  [['Conditional',  'fg']],
-    \ 'pointer': [['Exception',    'fg']],
-    \ 'marker':  [['Keyword',      'fg']],
-    \ 'spinner': [['Label',        'fg']],
-    \ 'header':  [['Comment',      'fg']] }
-  let cols = []
-  for [name, pairs] in items(rules)
-    for pair in pairs
-      let code = synIDattr(synIDtrans(hlID(pair[0])), pair[1])
-      if !empty(name) && code > 0
-        call add(cols, name.':'.code)
-        break
-      endif
-    endfor
-  endfor
-  let s:orig_fzf_default_opts = get(s:, 'orig_fzf_default_opts', $FZF_DEFAULT_OPTS)
-  let $FZF_DEFAULT_OPTS = s:orig_fzf_default_opts .
-        \ empty(cols) ? '' : (' --color='.join(cols, ','))
-endfunction
-
-augroup _fzf
-  autocmd!
-  autocmd ColorScheme * call <SID>update_fzf_colors()
-augroup END

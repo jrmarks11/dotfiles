@@ -79,3 +79,6 @@
 [submodule "vim/.vim/plugged/papercolor-theme"]
 	path = vim/.vim/plugged/papercolor-theme
 	url = git@github.com:NLKNguyen/papercolor-theme.git
+[submodule "vim/.vim/plugged/vim-colors"]
+	path = vim/.vim/plugged/vim-colors
+	url = git@github.com:jrmarks11/vim-colors.git
