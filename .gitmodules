@@ -82,3 +82,6 @@
 [submodule "vim/.vim/plugged/vim-colors"]
 	path = vim/.vim/plugged/vim-colors
 	url = git@github.com:jrmarks11/vim-colors.git
+[submodule "vim/.vim/plugged/vim-commands"]
+	path = vim/.vim/plugged/vim-commands
+	url = git@github.com:jrmarks11/vim-commands.git

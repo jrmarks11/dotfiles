@@ -28,6 +28,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-unimpaired'
 
   Plug 'jmarks/vim-colors'
+  Plug 'jmarks/vim-commands'
   Plug 'jmarks/vim-settings'
 call plug#end()
 
@@ -55,17 +56,16 @@ nmap K i<CR><ESC>
 " shift tab and tab like c-o and c-i
 nmap <S-TAB> <C-o>
 
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 " good leader keys that are open
 nmap <LEADER>, :!echo ,<CR>
 nmap <LEADER>d "_d
 nmap <LEADER>h <<
-vmap <LEADER>h <gv
 nmap <LEADER>j ]e
-vmap <LEADER>j ]egv
 nmap <LEADER>k [e
-vmap <LEADER>k [egv
-nmap <LEADER>l >>
-vmap <LEADER>l >gv
+nmap <LEADER>l :Limelight!!<CR>
 nmap <LEADER>n }jzt
 nmap <LEADER>N 2{jzt
 nmap <LEADER>m }jzz
@@ -118,42 +118,6 @@ nmap <LEADER>w  <C-w>
 nmap <LEADER>w- <C-w>s
 nmap <LEADER>w/ <C-w>v
 nmap <LEADER>wd <C-w>q
-
-function Rspec_line_cb()
-  execute ":wa"
-  execute ":let @* = \"" . "bundle exec rspec " . bufname("%") . ':'
-        \ . line(".") . " --format d\""
-endfunction
-command Rspeclinecb call Rspec_line_cb()
-
-function Rspec_line()
-  execute ":wa"
-  execute "!" . "bundle exec rspec " . bufname("%") . ':' . line(".")
-        \ . " --format d"
-endfunction
-command Runspecline call Rspec_line()
-
-function Rspec_file()
-  execute ":wa"
-  execute "!" . "bundle exec rspec " . bufname("%") . " --format d"
-endfunction
-command Runspecfile call Rspec_file()
-
-function Rspec_cb()
-  execute ":wa"
-  execute ":let @* = \"" . "bundle exec rspec " . bufname("%")
-        \ . " --format d\""
-endfunction
-command Rspeccb call Rspec_cb()
-
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
-" find in project with fzf
-command -bang -nargs=* FzfVimGrep call
-      \ fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings
-      \ --ignore-case --hidden --follow --glob "!.git/*" --color "always" '
-      \ .shellescape(<q-args>), 1, <bang>0)
 
 autocmd User GoyoEnter Limelight
 autocmd User GoyoLeave Limelight!
