@@ -8,6 +8,9 @@ else
 fi
 
 # source installed files
+# asdf
+[ -f ~/.asdf/asdf.sh ] && . ~/.asdf/asdf.sh
+
 # autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
