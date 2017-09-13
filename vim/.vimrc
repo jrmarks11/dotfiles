@@ -75,7 +75,7 @@ nmap <LEADER>M 2{jzz
 nmap <LEADER>o :Goyo<CR>
 nmap <LEADER>p "0p
 nmap <LEADER>q :!echo q<CR>
-nmap <LEADER>r :Colors<CR>
+nmap <LEADER>r =or
 nmap <LEADER>u :!echo u<CR>
 nmap <LEADER>y :!echo y<CR>
 
