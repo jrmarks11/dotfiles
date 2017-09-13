@@ -1,4 +1,5 @@
 let mapleader=' '
+let maplocalleader=','
 
 call plug#begin('~/.vim/plugged')
   Plug 'andrewradev/splitjoin.vim'
