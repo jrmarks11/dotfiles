@@ -85,3 +85,6 @@
 [submodule "vim/.vim/plugged/vim-commands"]
 	path = vim/.vim/plugged/vim-commands
 	url = git@github.com:jrmarks11/vim-commands.git
+[submodule "vim/.vim/plugged/vim-orgmode"]
+	path = vim/.vim/plugged/vim-orgmode
+	url = git@github.com:jceb/vim-orgmode.git

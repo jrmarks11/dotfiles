@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'b4winckler/vim-angry'
   Plug 'crusoexia/vim-dracula'
   Plug 'elixir-lang/vim-elixir'
+  Plug 'jceb/vim-orgmode'
   Plug 'junegunn/fzf', { 'do': './install --all' }
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/goyo.vim'
