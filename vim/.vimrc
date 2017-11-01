@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 " colors
   Plug 'crusoexia/vim-dracula'
   Plug 'NLKNguyen/papercolor-theme'
+
 " text-objects
   Plug 'b4winckler/vim-angry'
   Plug 'julian/vim-textobj-variable-segment'
