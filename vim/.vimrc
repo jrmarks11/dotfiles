@@ -2,9 +2,19 @@ let mapleader=' '
 let maplocalleader=','
 
 call plug#begin('~/.vim/plugged')
-  Plug 'andrewradev/splitjoin.vim'
-  Plug 'b4winckler/vim-angry'
+" colors
   Plug 'crusoexia/vim-dracula'
+  Plug 'NLKNguyen/papercolor-theme'
+" text-objects
+  Plug 'b4winckler/vim-angry'
+  Plug 'julian/vim-textobj-variable-segment'
+  Plug 'kana/vim-textobj-indent'
+  Plug 'kana/vim-textobj-line'
+  Plug 'kana/vim-textobj-user'
+  Plug 'nelstrom/vim-textobj-rubyblock'
+  Plug 'andrewradev/splitjoin.vim'
+
+" plugins
   Plug 'elixir-lang/vim-elixir'
   Plug 'jceb/vim-orgmode'
   Plug 'junegunn/fzf', { 'do': './install --all' }
@@ -12,14 +22,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
   Plug 'junegunn/vim-easy-align'
-  Plug 'julian/vim-textobj-variable-segment'
-  Plug 'kana/vim-textobj-indent'
-  Plug 'kana/vim-textobj-line'
-  Plug 'kana/vim-textobj-user'
   Plug 'ludovicchabant/vim-gutentags.git'
-  Plug 'nelstrom/vim-textobj-rubyblock'
   Plug 'nelstrom/vim-visual-star-search'
-  Plug 'NLKNguyen/papercolor-theme'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-fugitive'
@@ -29,6 +33,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-unimpaired'
 
+" mine
   Plug 'jmarks/vim-colors'
   Plug 'jmarks/vim-commands'
   Plug 'jmarks/vim-settings'
@@ -117,9 +122,6 @@ nmap <LEADER>fr :History<CR>
 
 " window nav
 nmap <LEADER>w  <C-w>
-nmap <LEADER>w- <C-w>s
-nmap <LEADER>w/ <C-w>v
-nmap <LEADER>wd <C-w>q
 
 autocmd User GoyoEnter Limelight
 autocmd User GoyoLeave Limelight!
