@@ -121,14 +121,20 @@ cl() { history -p '!!'|tr -d \\n|pbcopy; }
 tssh() { tmate display -p '#{tmate_ssh}' | pbcopy; }
 function rgv() { vim $(rg -l "$@"); }
 
-#shortcuts for bundle
 alias be='bundle exec'
 alias bec='bundle exec rails c'
 alias ber='bundle exec rspec'
 alias bake='bundle exec rake'
+alias berfd='bundle exec rspec --format d'
+alias berof='bundle exec rspec --only-failures'
 alias d='git diff'
 alias dc='git diff --cached'
 alias dm='git diff master'
-alias berfd='bundle exec rspec --format d'
-alias berof='bundle exec rspec --only-failures'
+alias gs='git status -s'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gp='git push'
+alias gpu='git push -u'
+alias gl='git pull'
+alias gu='git up'
 alias rf='rg --files --glob'
