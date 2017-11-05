@@ -11,7 +11,7 @@
 [alias]
   br = branch
   co = checkout
-  hs = log --pretty='format:%C(yellow)%h %Creset- %C(white)%s %C(bold blue)[%an]%Creset %Cgreen%cr' --graph
+  hs = log --pretty='format:%C(yellow)%h %Creset- %C(black)%s %C(bold blue)[%an]%Creset %Cgreen%cr' --graph
   s = status -s
   up = !git pull --rebase $@ && git submodule update --init --recursive && git submodule update --remote --merge
   yolo = push -f
